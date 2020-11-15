@@ -323,4 +323,8 @@ Then you can open http://localhost:8000 and you will see the page:
 
 ![image-20201112214323389](assets/Homepage.png)
 
+:artificial_satellite:**【Tips】If your system is [Windows WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10), You need to use Network ip to open the page, such as below which is http://172.30.240.213:8000**
+
+![wsl](assets/wsl_mining_ip.png)
+
 Congratulations! Now you can start your mining journey.
