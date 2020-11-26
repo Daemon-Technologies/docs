@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# Running Mining-Bot
+# Building Mining-Bot Before Use
 
 Learn how to set up and run mining bot. 
 
