@@ -328,5 +328,6 @@ Starting the development server...
 :artificial_satellite:**【提醒】如果你使用的系统是Windows并且使用了[Windows WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)，你需要使用输出中提示的Network地址来打开网站，比如下方的http://172.30.240.213:8000**
 
 ![wsl](assets/wsl_mining_ip.png)
+ 
 
 恭喜你！你已经完成了Mining-Bot的启动，接下来可以开启你的挖矿之旅了。
