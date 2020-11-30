@@ -6,6 +6,8 @@ sort: 1
 
 Learn how to set up and run mining bot. 
 
+**【Tips】If you are not the first time to start mining-bot, please see [Restart Mining-Bot](#Restart Mining-Bot)**.
+
 ## Introduction
 
 This tutorial will walk you through the following steps:
@@ -26,26 +28,26 @@ The tutorial of installing Rust comes from [blockstack official document](https:
 If you use Linux, you may need to manually install [`libssl-dev`](https://wiki.openssl.org/index.php/Libssl_API) and other packages. In your command line, run the following to get all packages:
 
 ```shell
-$ sudo apt-get install build-essential cmake libssl-dev pkg-config
+sudo apt-get install build-essential cmake libssl-dev pkg-config
 ```
 
 Ensure that you have Rust installed. If you are using macOS, Linux, or another Unix-like OS, run the following. If you are on a different OS, follow the [official Rust installation guide](https://www.rust-lang.org/tools/install).
 
 ```shell
-$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ```
 
 In case you just installed Rust, you will be prompted to run the following command to make the `cargo` command available:
 
 ```shell
-$ source $HOME/.cargo/env
+source $HOME/.cargo/env
 ```
 
 Next, to check if Rust is installed correctly:
 
 ```shell
 # use the command
-$ rustc -V
+rustc -V
 # here is the output
 rustc 1.47.0 (18bf6b4f0 2020-10-07)
 ```
@@ -57,11 +59,11 @@ We recommend that you use `nvm` to control the version of Nodejs and install nod
 To **install** or **update** `nvm`, you should run the [install script](https://github.com/nvm-sh/nvm/blob/v0.37.0/install.sh). To do that, you may either download and run the script manually, or use the following cURL or Wget command:
 
 ```shell
-$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
 ```
 
 ```shell
-$ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
 ```
 
 Run the following command to make the `nvm` command available:
@@ -75,10 +77,10 @@ export NVM_DIR="$HOME/.nvm"
 Then you should use the following command to see if you have installed `nvm`:
 
 ```shell
-$ nvm
+nvm
 ```
 
-If the installation is successful, the ouput similar to the following will be displayed:
+If the installation is successful, the output similar to the following will be displayed:
 
 ```shell
 Node Version Manager
@@ -150,17 +152,17 @@ Note:
 Then you can use the following command to install Nodejs:
 
 ```shell
-$ nvm install 14.15.0
+nvm install 14.15.0
 ```
 
 Then use the following commands to see if node and npm are installed correctly:
 
 ```shell
 # use these two commands
-$ node -v
+node -v
 # here is the version output
 v14.15.0
-$ npm -v
+npm -v
 # here is the version output
 6.14.8
 ```
@@ -168,14 +170,14 @@ $ npm -v
 Next, use `npm` to install `yarn`:
 
 ```shell
-$ npm install -g yarn
+npm install -g yarn
 ```
 
 To check if `yarn` is installed correctly:
 
 ```shell
 # use the command
-$ yarn -v
+yarn -v
 # here is the version output
 1.22.4
 ```
@@ -187,14 +189,14 @@ The tutorial of installing stacks-node based on [blockstack official document](h
 First, clone this repository:
 
 ```shell
-$ git clone https://github.com/blockstack/stacks-blockchain.git
-$ cd stacks-blockchain
+git clone https://github.com/blockstack/stacks-blockchain.git
+cd stacks-blockchain
 ```
 
 Install the Stacks node by running:
 
 ```shell
-$ cargo build --workspace --release --bin stacks-node
+cargo build --workspace --release --bin stacks-node
 # binary will be in target/release/stacks-node
 ```
 
@@ -203,14 +205,14 @@ $ cargo build --workspace --release --bin stacks-node
 Then copy the binary file `target/release/stacks-node` to `$HOME/.cargo/bin`:
 
 ```shell
-$ cp target/release/stacks-node $HOME/.cargo/bin
+cp target/release/stacks-node $HOME/.cargo/bin
 ```
 
 To check if the `stacks-node` is global command right now:
 
 ```shell
 # use the command
-$ stacks-node help
+stacks-node help
 ```
 
 Here is the output:
@@ -254,23 +256,23 @@ help            Display this help.
 
 ## Step 2: Running Mining-Local-Server
 
-First, clone the repository:
+First, open a new terminal and clone the repository:
 
 ```shell
-$ git clone https://github.com/Daemon-Technologies/Mining-Local-Server.git
-$ cd Mining-Local-Server
+git clone https://github.com/Daemon-Technologies/Mining-Local-Server.git
+cd Mining-Local-Server
 ```
 
 Install the dependencies:
 
 ```shell
-$ npm install
+npm install
 ```
 
 Then running Mining-Local-Server:
 
 ```shell
-$ npm start
+npm start
 ```
 
 If you see the output like the following, that means you start Mining-Local-Server successfully:
@@ -287,17 +289,17 @@ See more information on [Mining-Local-Server](https://github.com/Daemon-Technolo
 
 ## Step 3: Running Mining-Bot
 
-First, open a new command window and clone the repository:
+First, open a new terminal and clone the repository:
 
 ```shell
-$ git clone https://github.com/Daemon-Technologies/Mining-Bot.git
-$ cd Mining-Bot
+git clone https://github.com/Daemon-Technologies/Mining-Bot.git
+cd Mining-Bot
 ```
 
 Install the dependencies:
 
 ```shell
-$ yarn install
+yarn install
 ```
 
 :warning:**This process will take a few minutes to complete.**
@@ -305,7 +307,7 @@ $ yarn install
 Then running Mining-Bot:
 
 ```shell
-$ npm start
+npm start
 ```
 
 If you see the output like the following, that means you start Mining-Bot successfully:
@@ -338,3 +340,75 @@ Then you can open http://localhost:8000 and you will see the page:
 ![wsl](assets/wsl_mining_ip.png)
 
 Congratulations! Now you can start your mining journey.
+
+## Restart Mining-Bot
+
+If you have successfully run Mining-Bot and have stopped all related programs. Now we will teach you how to run Mining-Bot again. If you are the Windows users, please use [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10). Make sure you have already stopped the programs(you can use `ctrl + C` to stop programs).
+
+**【Tips】Make sure you have successfully completed the above tutorial and stopped all programs mentioned above.**
+
+### Running Mining-Local-Server
+
+Open a new terminal and get into `Mining-Local-Server` directory:
+
+```shell
+cd Mining-Local-Server
+```
+
+Start Mining-Local-Server:
+
+```shell
+npm start
+```
+
+If you see the output like the following, that means you start Mining-Local-Server successfully:
+
+```shell
+> miningbot-server@1.0.0 start /home/sher/stacks-mining/Mining-Local-Server
+> node server.js
+
+Example app listening at http://localhost:5000
+```
+
+### Running Mining-Bot
+
+Open a new terminal and get into `Mining-Bot` directory:
+
+```shell
+cd Mining-Bot
+```
+
+Start Mining-Bot:
+
+```shell
+npm start
+```
+
+If you see the output like the following, that means you start Mining-Bot successfully:
+
+```shell
+> ant-design-pro@5.0.0-alpha.0 start /home/sher/stacks-mining/Mining-Bot
+> umi dev
+
+🚀 Starting Umi UI using umi@3.2.27...
+🌈 Umi UI mini Ready on port 3000.
+Starting the development server...
+
+✔ Webpack
+  Compiled successfully in 27.20s
+
+ DONE  Compiled successfully in 27199ms                                                                       5:28:01 PM
+
+
+  App running at:
+  - Local:   http://localhost:8000 (copied to clipboard)
+  - Network: http://172.31.214.44:8000
+```
+
+Then you can open http://localhost:8000 and you will see the page:
+
+![image-20201112214323389](assets/Homepage.png)
+
+:artificial_satellite:**【Tips】If your system is [Windows WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10), You need to use Network ip to open the page, such as below which is http://172.30.240.213:8000**
+
+![wsl](assets/wsl_mining_ip.png)

@@ -26,26 +26,26 @@ sort: 2
 如果你使用的是Linux系统，你可能需要手动安装 [`libssl-dev`](https://wiki.openssl.org/index.php/Libssl_API) 和其他依赖包。在命令行中，输入以下命令来安装：
 
 ```shell
-$ sudo apt-get install build-essential cmake libssl-dev pkg-config
+sudo apt-get install build-essential cmake libssl-dev pkg-config
 ```
 
 确保你的系统已经安装了Rust环境。如果你使用的是macOS, Linux或其他Unix相关的系统，运行以下命令。如果你的系统不是以上系统，请参照[Rust官方文档](https://www.rust-lang.org/tools/install)。
 
 ```shell
-$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ```
 
 如果你刚安装了Rust，则会提示你运行以下命令以使`cargo`命令可用：
 
 ```shell
-$ source $HOME/.cargo/env
+source $HOME/.cargo/env
 ```
 
 然后，在命令行中输入以下命令检查Rust是否安装成功：
 
 ```shell
 # 命令
-$ rustc -V
+rustc -V
 # 版本输出如下，版本不同也不影响
 rustc 1.47.0 (18bf6b4f0 2020-10-07)
 ```
@@ -57,17 +57,17 @@ rustc 1.47.0 (18bf6b4f0 2020-10-07)
 为了安装或更新`nvm`，你需要运行[安装脚本](https://github.com/nvm-sh/nvm/blob/v0.37.0/install.sh)。你需要下载或者直接手动运行脚本，或者可以通过以下命令来进行安装：
 
 ```shell
-$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
 ```
 
 ```shell
-$ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
 ```
 
 然后你可以使用以下命令来检验是否`nvm`安装成功：
 
 ```shell
-$ nvm
+nvm
 ```
 
 如果安装成功，输出内容会跟下面类似：
@@ -142,18 +142,18 @@ Note:
 然后你可以使用以下命令来安装Nodejs：
 
 ```shell
-$ nvm install 14.15.0
+nvm install 14.15.0
 ```
 
 然后使用以下命令检查`node`和`npm`是否安装成功：
 
 ```shell
 # node命令
-$ node -v
+node -v
 # node版本输出
 v14.15.0
 # npm命令
-$ npm -v
+npm -v
 # npm版本输出
 6.14.8
 ```
@@ -161,14 +161,14 @@ $ npm -v
 然后我们使用`npm`来安装`yarn`：
 
 ```shell
-$ npm install -g yarn
+npm install -g yarn
 ```
 
 来检验`yarn`是否安装成功：
 
 ```shell
 # 使用如下命令
-$ yarn -v
+yarn -v
 # 版本输出
 1.22.4
 ```
@@ -180,14 +180,14 @@ $ yarn -v
 首先，克隆仓库：
 
 ```shell
-$ git clone https://github.com/blockstack/stacks-blockchain.git
-$ cd stacks-blockchain
+git clone https://github.com/blockstack/stacks-blockchain.git
+cd stacks-blockchain
 ```
 
 通过以下命令安装stacks-node：
 
 ```shell
-$ cargo build --workspace --release --bin stacks-node
+cargo build --workspace --release --bin stacks-node
 # 二进制文件会在 target/release/stacks-node 中
 ```
 
@@ -196,13 +196,13 @@ $ cargo build --workspace --release --bin stacks-node
 然后通过以下命令将生成的二进制文件`target/release/stacks-node`复制到`$HOME/.cargo/bin`：
 
 ```shell
-$ cp target/release/stacks-node $HOME/.cargo/bin
+cp target/release/stacks-node $HOME/.cargo/bin
 ```
 
 检验`stacks-node`是否已经是全局命令：
 
 ```shell
-$ stacks-node help
+stacks-node help
 ```
 
 输出类似如下:
@@ -246,23 +246,23 @@ help            Display this help.
 
 ## 第二步：运行Mining-Local-Server
 
-首先，克隆仓库：
+首先，打开一个新窗口然后克隆仓库：
 
 ```shell
-$ git clone https://github.com/Daemon-Technologies/Mining-Local-Server.git
-$ cd Mining-Local-Server
+git clone https://github.com/Daemon-Technologies/Mining-Local-Server.git
+cd Mining-Local-Server
 ```
 
 安装依赖包：
 
 ```shell
-$ npm install
+npm install
 ```
 
 运行Mining-Local-Server：
 
 ```shell
-$ npm start
+npm start
 ```
 
 如果你看到类似如下输出则代表已成功启动：
@@ -282,14 +282,14 @@ Example app listening at http://localhost:5000
 首先打开一个新命令窗口并克隆Mining-Bot仓库：
 
 ```shell
-$ git clone https://github.com/Daemon-Technologies/Mining-Bot.git
-$ cd Mining-Bot
+git clone https://github.com/Daemon-Technologies/Mining-Bot.git
+cd Mining-Bot
 ```
 
 安装依赖包，【注意】此处需要用`yarn`命令进行安装：
 
 ```shell
-$ yarn install
+yarn install
 ```
 
 :warning:**此过程会花费一定的时间来完成。**
@@ -297,7 +297,7 @@ $ yarn install
 运行Mining-Bot
 
 ```shell
-$ npm start
+npm start
 ```
 
 如果你看到类似如下输出则代表Mining-Bot已成功启动：
@@ -330,3 +330,75 @@ Starting the development server...
 ![wsl](assets/wsl_mining_ip.png)
 
 恭喜你！你已经完成了Mining-Bot的启动，接下来可以开启你的挖矿之旅了。
+
+## 重启Mining-Bot
+
+如果你已经成功运行Mining-Bot并且已经停掉了所有相关程序。现在我们将教你如何再次运行Mining-Bot。如果你是Windows用户，请使用[WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)来进行如下操作。确保你已经停掉了挖矿程序（你可以使用`Ctrl+C`来停止这些程序）。
+
+**【提醒】确保你已经成功完成上述教程并成功运行程序，并关闭了所有上述已启动的程序。**
+
+### 运行Mining-Local-Server
+
+打开一个新窗口然后进入`Mining-Local-Server`目录：
+
+```shell
+cd Mining-Local-Server
+```
+
+启动Mining-Local-Server：
+
+```shell
+npm start
+```
+
+如果你看到类似如下输出则代表已成功启动：
+
+```shell
+> miningbot-server@1.0.0 start /home/sher/stacks-mining/Mining-Local-Server
+> node server.js
+
+Example app listening at http://localhost:5000
+```
+
+### 运行Mining-Bot
+
+打开一个新窗口然后进入`Mining-Bot`目录：
+
+```shell
+cd Mining-Bot
+```
+
+启动Mining-Bot：
+
+```shell
+npm start
+```
+
+如果你看到类似如下输出则代表已成功启动：
+
+```shell
+> ant-design-pro@5.0.0-alpha.0 start /home/sher/stacks-mining/Mining-Bot
+> umi dev
+
+🚀 Starting Umi UI using umi@3.2.27...
+🌈 Umi UI mini Ready on port 3000.
+Starting the development server...
+
+✔ Webpack
+  Compiled successfully in 27.20s
+
+ DONE  Compiled successfully in 27199ms                                                                       5:28:01 PM
+
+
+  App running at:
+  - Local:   http://localhost:8000 (copied to clipboard)
+  - Network: http://172.31.214.44:8000
+```
+
+然后你可以在浏览器打开http://localhost:8000 并会看到如下界面的话：
+
+![image-20201112221844632](assets/Homepage-CN.png)
+
+:artificial_satellite:**【提醒】如果你使用的系统是Windows并且使用了[Windows WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)，你需要使用输出中提示的Network地址来打开网站，比如下方的http://172.30.240.213:8000**
+
+![wsl](assets/wsl_mining_ip.png)
