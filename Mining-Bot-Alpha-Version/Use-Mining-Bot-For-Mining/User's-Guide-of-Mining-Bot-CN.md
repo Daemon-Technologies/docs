@@ -10,7 +10,7 @@ sort: 2
 
 ## 登陆页面介绍
 
-当你在浏览器中输入 http://localhost:8000/ 的时候，会看到如下界面：
+当你在浏览器中输入 **http://localhost:8000/** 的时候，会看到如下界面：
 
 ![](assets/CN/index/indexPage.png)
 
@@ -40,7 +40,8 @@ sort: 2
 
 ### 比特币与Stacks地址在线生成
 
-如果你有24助记词的BTC或STX地址，可以选择跳过本节。
+:artificial_satellite:**【提醒】如果你有24助记词的BTC或STX地址，可以选择跳过本节**
+
 本小节参考[官方挖矿文档](https://docs.blockstack.org/mining)中对于生成在线地址的指令。
 
 运行如下指令：
