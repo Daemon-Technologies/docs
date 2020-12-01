@@ -101,7 +101,7 @@ Click **Start Mining** in **Mining Operation Board**, and the account selection 
 
 ![](assets/EN/client/startMining1.png)
 
-After selecting the account, please set the burning amount. The burning unit is the smallest unit of Bitcoin, Satoshi. Select the appropriate amount of combustion and click Finish.
+After selecting the account, please set the burning amount. The burning unit is the smallest unit of Bitcoin, Satoshi. Select the appropriate amount to burn in Mining-Program and click **Finish**.
 
 ![](assets/EN/client/startMining2.png)
 
