@@ -7,7 +7,7 @@ sort: 1
 
 This documentation will introduce to you how to mine STX using Mining-Bot
 
-- [Pre-order tutorial](../Build-Before-Using/Mining-Bot-Alpha-Tutorial-EN.md)
+- Make sure you followed the [building tutorial](../Build-Before-Using/Mining-Bot-Alpha-Tutorial-EN.md)
 
 ## Login Page Introduction
 
