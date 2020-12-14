@@ -11,5 +11,9 @@
 
 #### 第二次打开Mining-Bot的时候需要进行什么操作
 
+#### 如何查询到Krypton测试网相关的
+
+https://docs.blockstack.org/en-US/start-mining
+
 
 
