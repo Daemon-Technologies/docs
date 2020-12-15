@@ -1,3 +1,6 @@
+---
+sort: 2 
+---
 # User's Guide of Mining-Bot
 
 - English Version : [Link](./User's-Guide-of-Mining-Bot.md)
