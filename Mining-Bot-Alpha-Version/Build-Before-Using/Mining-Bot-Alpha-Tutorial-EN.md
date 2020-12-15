@@ -23,7 +23,7 @@ This tutorial will walk you through the following steps:
 
 ### Rust
 
-The tutorial of installing Rust comes from [blockstack official document](https://docs.blockstack.org/stacks-blockchain/running-testnet-node). You can see it for more information.
+The tutorial of installing Rust comes from [blockstack official document](https://docs.blockstack.org/understand-stacks/running-testnet-node). You can see it for more information.
 
 If you use Linux, you may need to manually install [`libssl-dev`](https://wiki.openssl.org/index.php/Libssl_API) and other packages. In your command line, run the following to get all packages:
 
