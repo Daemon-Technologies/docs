@@ -70,7 +70,7 @@ After running the above command, you will see a lot of installation logs. At the
   }
 }
 ```
-:artificial_satellite:**【提醒】Information above must be saved carefully such as Bitcoin and Stacks private key**
+:artificial_satellite:**【Notification】Information above must be saved carefully such as Bitcoin and Stacks private key**
 
 
 ### Bitcoin and Stacks address import
