@@ -33,6 +33,10 @@ npx -q stacks-gen sk --testnet > keychain.json
 
 当前挖矿比赛是基于`Krypton`测试网进行的。[Blockstacks官方文档](https://docs.blockstack.org/start-mining)给的教程是基于`Xenon`测试网的，如果你想了解关于`Krypton`测试网的安装部署请参照[Mining Bot Alpha版本教程](https://daemon-technologies.github.io/docs/Mining-Bot-Alpha-Version/)。
 
+## 是否支持使用VPS来运行挖矿机器人？
+
+不行，目前不支持VPS。
+
 ## 可以不使用Mining Bot来参与挖矿么？
 
 当然可以。本质上, 挖矿是基于修改[配置文件](https://github.com/Daemon-Technologies/Mining-Local-Server/blob/master/conf/miner-Krypton.toml)（seed/burn_fee/...）后运行`stacks-node`来进行的。当你本地clone了[stacks-node](https://github.com/blockstack/stacks-blockchain)仓库后，你可以在文件夹`stacks-blockchain/testnet/stacks-node/conf`下按照以下的格式创建一个`.toml`文件（名字随意，如`miner-conf.toml`）

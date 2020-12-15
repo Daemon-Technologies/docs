@@ -35,6 +35,10 @@ No, for the competition only running one miner is needed, and the same person ca
 
 The current mining competition is based on the `Krypton` testnet. The tutorial given at [Blockstacks official document](https://docs.blockstack.org/start-mining)  is based on the `Xenon` testnet. If you want to know about the installation and deployment of the `Krypton` testnet, please refer to [Mining Bot Alpha version tutorial](https://daemon-technologies.github.io/docs/Mining-Bot-Alpha-Version/).
 
+## Can I use VPS to run the Mining Bot?
+
+No, VPS is not supported right now.
+
 ## Can I participate in mining without using Mining Bot?
 
 of course can. Essentially, mining is based on running stacks-node after modifying the [configuration file]()(seed/burn_fee/...). After you clone the [stacks-node](https://github.com/blockstack/stacks-blockchain), you can create a `.toml` file(maybe `miner-conf.toml`) like the following at `stacks-blockchain/testnet/stacks-node/conf`.
