@@ -103,12 +103,6 @@ If you see the output like the following which means you run the mining program 
 ==> ./conf/miner-conf.toml
 INFO [1608017423.236] [testnet/stacks-node/src/run_loop/neon.rs:109] [ThreadId(1)] Miner node: checking UTXOs at address
 : mhQcXvMokx2HRb4zKhe8qDR5SQEft48VMX
-ERROR [1608017423.691] [testnet/stacks-node/src/burnchains/bitcoin_regtest_controller.rs:444] [ThreadId(1)] Bitcoin RPC 
-failure: error listing utxos Network("Bitcoin RPC: status(500) != success, Response { status: InternalServerError, heade
-rs: Headers { headers: {HeaderName(\"date\"): [HeaderValue { inner: \"Tue, 15 Dec 2020 07:30:23 GMT\" }], HeaderName(\"c
-ontent-length\"): [HeaderValue { inner: \"25\" }], HeaderName(\"content-type\"): [HeaderValue { inner: \"application/jso
-n\" }]} }, version: None, sender: Some(Sender { .. }), receiver: Receiver { .. }, body: Body { reader: \"<hidden>\", len
-gth: Some(25) }, local: TypeMap }")
 INFO [1608017436.220] [testnet/stacks-node/src/run_loop/neon.rs:116] [ThreadId(1)] Miner node: starting up, UTXOs found.
 ERROR [1608017436.237] [src/chainstate/stacks/index/storage.rs:1550] [ThreadId(1)] Not found (no file is open)
 INFO [1608017436.237] [src/chainstate/stacks/index/marf.rs:216] [ThreadId(1)] First-ever block 0f9188f13cb7b2c71f2a335e3
