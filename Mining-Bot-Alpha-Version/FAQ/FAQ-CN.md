@@ -39,9 +39,9 @@ npx -q stacks-gen sk --testnet > keychain.json
 
 ## 可以不使用Mining Bot来参与挖矿么？
 
-当然可以。本质上, 挖矿是基于修改[配置文件](https://github.com/Daemon-Technologies/Mining-Local-Server/blob/master/conf/miner-Krypton.toml)（seed/burn_fee/...）后运行`stacks-node`来进行的。当你本地clone了[stacks-node](https://github.com/blockstack/stacks-blockchain)仓库后，你可以在文件夹`stacks-blockchain/testnet/stacks-node/conf`下按照以下的格式创建一个`.toml`文件（名字随意，如`miner-conf.toml`）
+当然可以。本质上, 挖矿是基于修改[配置文件](https://github.com/Daemon-Technologies/Mining-Local-Server/blob/master/conf/miner-Krypton.toml)（seed/burn_fee_cap/...）后运行`stacks-node`来进行的。当你本地clone了[stacks-node](https://github.com/blockstack/stacks-blockchain)仓库后，你可以在文件夹`stacks-blockchain/testnet/stacks-node/conf`下按照以下的格式创建一个`.toml`文件（名字随意，如`miner-conf.toml`）
 
-**【提醒】记得修改`.toml`文件中的seed和burn_fee，其中seed是你的私钥，burn_fee是你的燃烧比特币量。**
+**【提醒】记得修改`.toml`文件中的seed和burn_fee_cap，其中seed是你的私钥，burn_fee_cap是你的燃烧比特币量。**
 
 ```toml
 [node]
@@ -57,8 +57,7 @@ mode = "krypton"
 peer_host = "bitcoind.krypton.blockstack.org"
 rpc_port = 18443
 peer_port = 18444
-burn_fee_cap = 96400
-burn_fee = [Your burn fee]
+burn_fee_cap = [Your burn fee]
 
 [[mstx_balance]]
 address = "STB44HYPYAT2BB2QE513NSP81HTMYWBJP02HPGK6"

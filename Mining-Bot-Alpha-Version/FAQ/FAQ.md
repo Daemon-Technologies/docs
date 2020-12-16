@@ -41,9 +41,9 @@ No, VPS is not supported right now.
 
 ## Can I participate in mining without using Mining Bot?
 
-of course can. Essentially, mining is based on running stacks-node after modifying the [configuration file]()(seed/burn_fee/...). After you clone the [stacks-node](https://github.com/blockstack/stacks-blockchain), you can create a `.toml` file(maybe `miner-conf.toml`) like the following at `stacks-blockchain/testnet/stacks-node/conf`.
+of course can. Essentially, mining is based on running stacks-node after modifying the [configuration file]()(seed/burn_fee_cap/...). After you clone the [stacks-node](https://github.com/blockstack/stacks-blockchain), you can create a `.toml` file(maybe `miner-conf.toml`) like the following at `stacks-blockchain/testnet/stacks-node/conf`.
 
-**【Tips】Remember to modify the seed and burn_fee in the `.toml` file, where seed is your private key and burn_fee is your burned bitcoin value.**
+**【Tips】Remember to modify the seed and burn_fee_cap in the `.toml` file, where seed is your private key and burn_fee_cap is your burned bitcoin value.**
 
 ```toml
 [node]
@@ -59,8 +59,7 @@ mode = "krypton"
 peer_host = "bitcoind.krypton.blockstack.org"
 rpc_port = 18443
 peer_port = 18444
-burn_fee_cap = 96400
-burn_fee = [Your burn fee]
+burn_fee_cap = [Your burn fee]
 
 [[mstx_balance]]
 address = "STB44HYPYAT2BB2QE513NSP81HTMYWBJP02HPGK6"
