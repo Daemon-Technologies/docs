@@ -8,6 +8,8 @@ Learn how to set up and run mining bot.
 
 **【Tips】If you are not the first time to start mining-bot, please see [Restart Mining-Bot](#Restart Mining-Bot)**.
 
+**【Tips】 If you want to get more comprehensive information, please see our tutorial video. **
+
 ## Introduction
 
 This tutorial will walk you through the following steps:
@@ -151,21 +153,62 @@ yarn -v
 
 ## Running Mining-Bot
 
-First, open the [Mining-Bot Alpha Release] (https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/1.0.0) page with a browser:
+We have different tutorials for users of different systems:
+
+### Mac User
+
+First, open the [Mining-Bot Alpha Release](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/1.0.0) page with a browser:
 
 ![releasePage.png](assets/releasePage.png)
 
-Please download the corresponding file in the red box in the picture and decompress it according to your own system version:
+Please download the corresponding file in the red box in the picture and decompress it:
 
 - Mac users: [Mining-Bot_V1.0.0_macos.zip](https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/Mining-Bot_V1.0.0_macos.zip)
-- Linux users: [Mining-Bot_V1.0.0_linux.zip](https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/Mining-Bot_V1.0.0_linux.zip)
-- Win10 WSL users: [Mining-Bot_V1.0.0_wsl.zip](https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/Mining-Bot_V1.0.0_wsl.zip)
+
+![mac_file](assets/mac_file.png)
 
 ![unzip_mac](assets/unzip_mac.jpg)
 
 **【Tips】 Remember the unzipped directory, follow-up operations need to enter the directory. **
 
-If you are a pure command line user, you can use the `wget` command to download, as follows:
+Then get into the decompressed directory:
+
+```shell
+cd Mining-Bot_V1.0.0_macos
+```
+
+Install the dependent package, 【Tips】Here you need to use the `yarn` command to install:
+
+```shell
+yarn install
+```
+
+:warning:**This process will take a few minutes to complete.**
+
+![yarn_install_mac](assets/yarn_install_mac.png)
+
+Then running Mining-Bot:
+
+```shell
+yarn start
+```
+
+If you see the output like the following, that means you start Mining-Bot successfully:
+
+```json
+yarn run v1.22.4
+$ node server.js
+Local Server listening at http://localhost:5000
+Mining-Bot Client listening at http://localhost:8000
+```
+
+![yarn_start_mac](assets/yarn_start_mac.png)
+
+### Linux or WSL User
+
+**Here I take WSL users as an example (The difference lies in the downloaded files**, the file that linux users need to download is `Mining-Bot_V1.0.0_linux.zip`).
+
+First, you can use the `wget` command to download, as follows:
 
 ```shell
 wget https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/Mining-Bot_V1.0.0_wsl.zip
@@ -181,7 +224,13 @@ unzip Mining-Bot_V1.0.0_wsl.zip -d Mining-Bot-Alpha
 
 ![unzip](assets/unzip.png)
 
-Then get into the decompressed directory to install the dependent package, 【Tips】Here you need to use the `yarn` command to install:
+Then get into the decompressed directory:
+
+```shell
+cd Mining-Bot-Alpha
+```
+
+Install the dependent package, 【Tips】Here you need to use the `yarn` command to install:
 
 ```shell
 yarn install
@@ -231,7 +280,7 @@ If you have successfully run Mining-Bot and have stopped all related programs. N
 
 ### Running Mining-Bot
 
-Open a new window and enter the unzipped directory of your zip file at that time, start Mining-Bot-Alpha:
+Open a new terminal and **enter the unzipped directory of your zip file at that time**, start Mining-Bot-Alpha:
 
 ```shell
 yarn start
