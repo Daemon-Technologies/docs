@@ -11,6 +11,8 @@ sort: 2
 **【提醒】建议全程保持科学上网。**
 
 **【提醒】如果想获取更全面的信息，请查看我们的视频教程。**
+- [Windows 教程](https://www.youtube.com/watch?v=FXifFx0Akzc)
+- [MacOS 教程](https://www.youtube.com/watch?v=TCtCTttsSeI)
 
 ## 介绍
 
@@ -19,7 +21,10 @@ sort: 2
 - 下载并安装Nodejs
 - 运行Mining-Bot
 
-:artificial_satellite:**【提示】如果你的操作系统是`Windows`系统，我们推荐你使用[WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)（推荐使用Ubuntu18系统）来安装并运行挖矿机器人。**
+:artificial_satellite:**【提示】如果你的操作系统是`Windows10`系统，你需要使用[WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)（推荐使用Ubuntu18系统）来安装并运行挖矿机器人。（Mining-Bot使用基于UNIX的指令与stacks-node进行交互，不支持Windows原生指令）**
+
+:artificial_satellite:**【提示】如果操作系统低于`Windows10`，我们将无法提供相应的支持**
+
 
 ## 环境安装与配置
 
