@@ -1,53 +1,47 @@
 ---
-sort: 1
+sort: 2
 ---
 
-# Building Mining-Bot Before Use
+# 运行挖矿机器人
 
-Learn how to set up and run mining bot. 
+本文将会教你如何配置并且运行挖矿机器人。
 
-**【Tips】If you are not the first time to start mining-bot, please see [Restart Mining-Bot](#Restart Mining-Bot)**.
+**【提醒】如果你不是第一次运行挖矿机器人，请查阅[重启Mining-Bot](#重启Mining-Bot)。**
 
-## Introduction
+## 介绍
 
-This tutorial will walk you through the following steps:
+本教程会带你经历以下步骤：
 
-- Download and install Nodejs
-- Running Mining-Bot
+- 下载并安装Nodejs
+- 运行Mining-Bot
 
-:artificial_satellite:**【Tips】If your system is `Windows`, we recommend that you can use [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (Ubuntu18 is recommended)to install Mining-Bot.**
+:artificial_satellite:**【提示】如果你的操作系统是`Windows`系统，我们推荐你使用[WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)（推荐使用Ubuntu18系统）来安装并运行挖矿机器人。**
 
-## Requirements
+## 环境安装与配置
 
 ### Nodejs
 
-We recommend that you use `nvm` to control the version of Nodejs and install node. The tutorial of installing `nvm` comes from [official document](https://github.com/nvm-sh/nvm). You can see it for more information.
+我们推荐你使用`nvm`来控制Nodejs的版本并进行nodejs的安装。本教程来自[nvm官方文档](https://github.com/nvm-sh/nvm)，如果想获取更详细的信息请查阅链接中的文档。
 
-To **install** or **update** `nvm`, you should run the [install script](https://github.com/nvm-sh/nvm/blob/v0.37.0/install.sh). To do that, you may either download and run the script manually, or use the following cURL or Wget command:
+为了安装或更新`nvm`，你需要运行[安装脚本](https://github.com/nvm-sh/nvm/blob/v0.37.0/install.sh)。你需要下载或者直接手动运行脚本，或者可以通过以下两种命令的任意一种来进行安装：
 
 ```shell
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
 ```
 
+或
+
 ```shell
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
 ```
 
-Run the following command to make the `nvm` command available:
-
-```shell
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-```
-
-Then you should use the following command to see if you have installed `nvm`:
+然后你可以使用以下命令来检验是否`nvm`安装成功：
 
 ```shell
 nvm
 ```
 
-If the installation is successful, the output similar to the following will be displayed:
+如果安装成功，输出内容会跟下面类似：
 
 ```shell
 Node Version Manager
@@ -116,149 +110,167 @@ Note:
   to remove, delete, or uninstall nvm - just remove the `$NVM_DIR` folder (usually `~/.nvm`)
 ```
 
-Then you can use the following command to install Nodejs:
+然后你可以使用以下命令来安装Nodejs：
 
 ```shell
 nvm install 14.15.0
 ```
 
-Then use the following commands to see if node and npm are installed correctly:
+然后使用以下命令检查`node`和`npm`是否安装成功：
 
 ```shell
-# use these two commands
+# node命令
 node -v
-# here is the version output
+# node版本输出
 v14.15.0
+# npm命令
 npm -v
-# here is the version output
+# npm版本输出
 6.14.8
 ```
 
-Next, use `npm` to install `yarn`:
+然后我们使用`npm`来安装`yarn`：
 
 ```shell
 npm install -g yarn
 ```
 
-To check if `yarn` is installed correctly:
+来检验`yarn`是否安装成功：
 
 ```shell
-# use the command
+# 使用如下命令
 yarn -v
-# here is the version output
+# 版本输出
 1.22.4
 ```
 
-## Running Mining-Bot
+## 运行Mining-Bot
 
-First, open the [Mining-Bot Alpha Release] (https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/1.0.0) page with a browser:
+首先，浏览器打开[Mining-Bot Alpha Release](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/1.0.0)页面：
 
-![releasePage.png](assets/releasePage.png)
 
-Please download the corresponding file in the red box in the picture and decompress it according to your own system version:
 
-- Mac users: [Mining-Bot_V1.0.0_macos.zip](https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/Mining-Bot_V1.0.0_macos.zip)
-- Linux users: [Mining-Bot_V1.0.0_linux.zip](https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/Mining-Bot_V1.0.0_linux.zip)
-- Win10 WSL users: [Mining-Bot_V1.0.0_wsl.zip](https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/Mining-Bot_V1.0.0_wsl.zip)
-
-![unzip_mac](assets/unzip_mac.jpg)
-
-**【Tips】 Remember the unzipped directory, follow-up operations need to enter the directory. **
-
-If you are a pure command line user, you can use the `wget` command to download, as follows:
+首先打开一个新命令窗口并克隆Mining-Bot仓库：
 
 ```shell
-wget https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/Mining-Bot_V1.0.0_wsl.zip
+git clone https://github.com/Daemon-Technologies/Mining-Bot.git
+cd Mining-Bot
 ```
 
-![wget](assets/wget.png)
-
-Then use the `unzip` command to decompress:
-
-```shell
-unzip Mining-Bot_V1.0.0_wsl.zip -d Mining-Bot-Alpha
-```
-
-![unzip](assets/unzip.png)
-
-Then get into the decompressed directory to install the dependent package, 【Tips】Here you need to use the `yarn` command to install:
+安装依赖包，【注意】此处需要用`yarn`命令进行安装：
 
 ```shell
 yarn install
 ```
 
-:warning:**This process will take a few minutes to complete.**
+:warning:**此过程会花费一定的时间来完成。**
 
-![yarn](assets/yarn.png)
-
-Then running Mining-Bot:
+运行Mining-Bot
 
 ```shell
-yarn start
+npm start
 ```
 
-If you see the output like the following, that means you start Mining-Bot successfully:
-
-```json
-yarn run v1.22.4
-$ node server.js
-Local Server listening at http://localhost:5000
-Mining-Bot Client listening at http://localhost:8000
-```
-
-If you are a WSL user you will see output similar to the following (`ip address` instead of `localhost`):
-
-```json
-yarn run v1.22.4
-$ node server.js
-Local Server listening at http://172.23.215.133:5000
-Mining-Bot Client listening at http://172.23.215.133:8000
-```
-
-Then you can open http://localhost:8000 and you will see the page:
-
-**【Tips】 WSL users need to use the IP address and port given at startup (such as `http://172.23.215.133:8000` above) to open in the browser. **
-
-![image-20201112214323389](assets/Homepage.png)
-
-Congratulations! Now you can start your mining journey.
-
-## Restart Mining-Bot
-
-If you have successfully run Mining-Bot and have stopped all related programs. Now we will teach you how to run Mining-Bot again. If you are the Windows users, please use [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10). Make sure you have already stopped the programs(you can use `ctrl + C` to stop programs).
-
-**【Tips】Make sure you have successfully completed the above tutorial and stopped all programs mentioned above.**
-
-### Running Mining-Bot
-
-Open a new window and enter the unzipped directory of your zip file at that time, start Mining-Bot-Alpha:
+如果你看到类似如下输出则代表Mining-Bot已成功启动：
 
 ```shell
-yarn start
+> ant-design-pro@5.0.0-alpha.0 start D:\Projects\Blockstack\Mining-Bot
+> umi dev
+
+� Starting Umi UI using umi@3.2.27...
+� Umi UI mini Ready on port 3000.
+Starting the development server...
+
+√ Webpack
+  Compiled successfully in 1.39m
+
+ DONE  Compiled successfully in 83338ms                                                                9:41:13 ├F10: PM┤
+
+
+  App running at:
+  - Local:   http://localhost:8000 (copied to clipboard)
+  - Network: http://172.19.112.1:8000
 ```
 
-If you see the output like the following, that means you start Mining-Bot successfully:
+然后你可以在浏览器打开http://localhost:8000 并会看到如下界面的话：
+
+![image-20201112221844632](assets/Homepage-CN.png)
+
+:artificial_satellite:**【提醒】如果你使用的系统是Windows并且使用了[Windows WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)，你需要使用输出中提示的Network地址来打开网站，比如下方的http://172.30.240.213:8000**
+
+![wsl](assets/wsl_mining_ip.png)
+
+
+恭喜你！你已经完成了Mining-Bot的启动，接下来可以开启你的挖矿之旅了。
+
+## 重启Mining-Bot
+
+如果你已经成功运行Mining-Bot并且已经停掉了所有相关程序。现在我们将教你如何再次运行Mining-Bot。如果你是Windows用户，请使用[WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)来进行如下操作。确保你已经停掉了挖矿程序（你可以使用`Ctrl+C`来停止这些程序）。
+
+**【提醒】确保你已经成功完成上述教程并成功运行程序，并关闭了所有上述已启动的程序。**
+
+### 运行Mining-Local-Server
+
+打开一个新窗口然后进入`Mining-Local-Server`目录：
 
 ```shell
-yarn run v1.22.4
-$ node server.js
-Local Server listening at http://localhost:5000
-Mining-Bot Client listening at http://localhost:8000
+cd Mining-Local-Server
 ```
 
-If you are a WSL user you will see output similar to the following (`ip address` instead of `localhost`):
+启动Mining-Local-Server：
 
-```json
-yarn run v1.22.4
-$ node server.js
-Local Server listening at http://172.23.215.133:5000
-Mining-Bot Client listening at http://172.23.215.133:8000
+```shell
+npm start
 ```
 
-Then you can open http://localhost:8000 and you will see the page:
+如果你看到类似如下输出则代表已成功启动：
 
-**【Tips】 WSL users need to use the IP address and port given at startup (such as `http://172.23.215.133:8000` above) to open in the browser. **
+```shell
+> miningbot-server@1.0.0 start /home/sher/stacks-mining/Mining-Local-Server
+> node server.js
 
-![image-20201112214323389](assets/Homepage.png)
+Example app listening at http://localhost:5000
+```
+
+### 运行Mining-Bot
+
+打开一个新窗口然后进入`Mining-Bot`目录：
+
+```shell
+cd Mining-Bot
+```
+
+启动Mining-Bot：
+
+```shell
+npm start
+```
+
+如果你看到类似如下输出则代表已成功启动：
+
+```shell
+> ant-design-pro@5.0.0-alpha.0 start /home/sher/stacks-mining/Mining-Bot
+> umi dev
+
+🚀 Starting Umi UI using umi@3.2.27...
+🌈 Umi UI mini Ready on port 3000.
+Starting the development server...
+
+✔ Webpack
+  Compiled successfully in 27.20s
+
+ DONE  Compiled successfully in 27199ms                                                                       5:28:01 PM
 
 
+  App running at:
+  - Local:   http://localhost:8000 (copied to clipboard)
+  - Network: http://172.31.214.44:8000
+```
+
+然后你可以在浏览器打开http://localhost:8000 并会看到如下界面的话：
+
+![image-20201112221844632](assets/Homepage-CN.png)
+
+:artificial_satellite:**【提醒】如果你使用的系统是Windows并且使用了[Windows WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)，你需要使用输出中提示的Network地址来打开网站，比如下方的http://172.30.240.213:8000**
+
+![wsl](assets/wsl_mining_ip.png)
