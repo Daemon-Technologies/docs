@@ -9,6 +9,8 @@ This documentation will introduce to you how to mine STX using Mining-Bot
 
 - [Pre-order tutorial](../Build-Before-Using/Mining-Bot-Alpha-Tutorial-EN.md)
 
+**【Tips】 A video will be released later, please refer to the video for specific instructions. **
+
 ## Login Page Introduction
 
 When you input **http://localhost:8000/** in your browser, you will see the following interface:

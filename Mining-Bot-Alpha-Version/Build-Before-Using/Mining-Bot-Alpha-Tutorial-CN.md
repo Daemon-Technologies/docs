@@ -8,6 +8,10 @@ sort: 2
 
 **【提醒】如果你不是第一次运行挖矿机器人，请查阅[重启Mining-Bot](#重启Mining-Bot)。**
 
+**【提醒】建议全程保持科学上网。**
+
+**【提醒】如果想获取更全面的信息，请查看我们的视频教程。**
+
 ## 介绍
 
 本教程会带你经历以下步骤：
@@ -146,21 +150,60 @@ yarn -v
 
 ## 运行Mining-Bot
 
+我们针对不同系统的用户有不同的教程：
+
+### Mac用户
+
 首先，用浏览器打开[Mining-Bot Alpha Release](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/1.0.0)页面：
 
 ![releasePage.png](assets/releasePage.png)
 
-请根据自己的系统版本**下载图片中红框内对应的文件并进行解压**：
+请**下载图片中红框内对应的文件并进行解压**：
 
 - mac用户：[Mining-Bot_V1.0.0_macos.zip](https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/Mining-Bot_V1.0.0_macos.zip)
-- Linux用户：[Mining-Bot_V1.0.0_linux.zip](https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/Mining-Bot_V1.0.0_linux.zip)
-- Win10 WSL用户：[Mining-Bot_V1.0.0_wsl.zip](https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/Mining-Bot_V1.0.0_wsl.zip)
+
+![mac_file](assets/mac_file.png)
 
 ![unzip_mac](assets/unzip_mac.jpg)
 
-**【提示】记住解压缩的目录，后续操作都需要进入目录内进行。**
+然后进入解压后的目录：
 
-如果你是纯命令行操作的用户，可以使用`wget`命令进行下载，如下：
+```shell
+cd Mining-Bot_V1.0.0_macos
+```
+
+然后安装依赖包，【注意】此处需要用`yarn`命令进行安装：
+
+```shell
+yarn install
+```
+
+:warning:**此过程会花费一定的时间来完成。**
+
+![yarn_install_mac](assets/yarn_install_mac.png)
+
+通过`yarn`命令运行Mining-Bot
+
+```shell
+yarn start
+```
+
+如果你看到类似如下输出则代表Mining-Bot已成功启动：
+
+```shell
+yarn run v1.22.4
+$ node server.js
+Local Server listening at http://localhost:5000
+Mining-Bot Client listening at http://localhost:8000
+```
+
+![yarn_start_mac](assets/yarn_start_mac.png)
+
+### Linux或WSL用户
+
+**这里以WSL用户为例**（**区别就在于下载的文件**，linux用户需要下载的文件是`Mining-Bot_V1.0.0_linux.zip`）。
+
+首先，使用`wget`命令进行下载，如下：
 
 ```shell
 wget https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/Mining-Bot_V1.0.0_wsl.zip
@@ -176,7 +219,13 @@ unzip Mining-Bot_V1.0.0_wsl.zip -d Mining-Bot-Alpha
 
 ![unzip](assets/unzip.png)
 
-然后进入解压后的目录安装依赖包，【注意】此处需要用`yarn`命令进行安装：
+然后进入解压后的目录：
+
+```shell
+cd Mining-Bot-Alpha
+```
+
+然后安装依赖包，【注意】此处需要用`yarn`命令进行安装：
 
 ```shell
 yarn install
@@ -227,7 +276,13 @@ Mining-Bot Client listening at http://172.23.215.133:8000
 
 ### 运行Mining-Bot
 
-打开一个新窗口然后进入你当时zip文件的解压目录，启动Mining-Bot-Alpha：
+打开一个新窗口然后**进入你当时zip文件的解压目录**，此处以`Mining-Bot-Alpha`为例：
+
+```shell
+cd Mining-Bot-Alpha
+```
+
+启动Mining-Bot-Alpha：
 
 ```shell
 yarn start
