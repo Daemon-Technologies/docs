@@ -8,7 +8,10 @@ Learn how to set up and run mining bot.
 
 **【Tips】If you are not the first time to start mining-bot, please see [Restart Mining-Bot](#Restart Mining-Bot)**.
 
-**【Tips】 If you want to get more comprehensive information, please see our tutorial video. **
+**【Tips】 If you want to get more comprehensive information, please see our tutorial video.**
+- [Windows tutorial](https://www.youtube.com/watch?v=FXifFx0Akzc)
+- [MacOS tutorial](https://www.youtube.com/watch?v=TCtCTttsSeI)
+
 
 ## Introduction
 
@@ -17,7 +20,9 @@ This tutorial will walk you through the following steps:
 - Download and install Nodejs
 - Running Mining-Bot
 
-:artificial_satellite:**【Tips】If your system is `Windows`, we recommend that you can use [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (Ubuntu18 is recommended)to install Mining-Bot.**
+:artificial_satellite:**【Tips】If your system is `Windows`, you must use [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (Ubuntu18 is recommended)to install Mining-Bot. (Mining-Bot use UNIX based command to interact with stacks-node, so do not support Windows native environment)**
+
+:artificial_satellite:**【Tips】If your system is lower than `Windows10`, we cannot give corresponding support to you**
 
 ## Requirements
 

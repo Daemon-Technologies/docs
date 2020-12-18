@@ -9,7 +9,9 @@ sort: 2
 
 - [前序环境搭建教程](../Build-Before-Using/Mining-Bot-Alpha-Tutorial-EN.md)
 
-**【提醒】后续会有视频放出，具体的使用说明大家可以参照视频。**
+**【提醒】具体的使用说明大家可以参照视频。**
+- [Windows 教程](https://www.youtube.com/watch?v=FXifFx0Akzc)
+- [MacOS 教程](https://www.youtube.com/watch?v=TCtCTttsSeI)
 
 ## 登陆页面介绍
 
@@ -85,6 +87,9 @@ npx @stacks/cli make_keychain -t
 ![](assets/CN/wallet/importAddress3.png)
 
 ## 客户端页面
+
+**【提醒】此部分版本更新较大，具体的使用说明大家可以参照视频。文档后续将进行同步更新**
+- [推荐教程](https://www.youtube.com/watch?v=TCtCTttsSeI)
 
 进入客户端界面的时候，会看到**挖矿操作面板**与**挖矿信息**两个面板。如果你是第一次进入客户端，你会看到当前状态显示为**无节点运行**
 
