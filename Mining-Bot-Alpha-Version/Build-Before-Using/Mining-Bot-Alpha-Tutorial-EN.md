@@ -224,7 +224,7 @@ wget https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/M
 Then use the `unzip` command to decompress:
 
 ```shell
-unzip Mining-Bot_V1.0.0_wsl.zip -d Mining-Bot-Alpha
+unzip Mining-Bot_V1.0.0_wsl.zip
 ```
 
 ![unzip](assets/unzip.png)
@@ -232,7 +232,7 @@ unzip Mining-Bot_V1.0.0_wsl.zip -d Mining-Bot-Alpha
 Then get into the decompressed directory:
 
 ```shell
-cd Mining-Bot-Alpha
+cd Mining-Bot_V1.0.0_wsl
 ```
 
 Install the dependent package, 【Tips】Here you need to use the `yarn` command to install:
