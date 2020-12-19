@@ -219,7 +219,7 @@ wget https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/M
 然后使用`unzip`命令进行解压：
 
 ```shell
-unzip Mining-Bot_V1.0.0_wsl.zip
+unzip Mining-Bot_V1.0.0_wsl.zip -d Mining-Bot-Alpha
 ```
 
 ![unzip](assets/unzip.png)
@@ -227,7 +227,7 @@ unzip Mining-Bot_V1.0.0_wsl.zip
 然后进入解压后的目录：
 
 ```shell
-cd Mining-Bot_V1.0.0_wsl
+cd Mining-Bot-Alpha
 ```
 
 然后安装依赖包，【注意】此处需要用`yarn`命令进行安装：
