@@ -43,6 +43,11 @@ No, VPS is not supported right now.
 
 of course can. Essentially, mining is based on running stacks-node after modifying the [configuration file]()(seed/burn_fee_cap/...). After you clone the [stacks-node](https://github.com/blockstack/stacks-blockchain), you can create a `.toml` file(maybe `miner-conf.toml`) like the following at `stacks-blockchain/testnet/stacks-node/conf`.
 
+**【Important】Remember to use correct version of `stacks-node` source code. Last version supported during contest is `v24.0.0.0-xenon`.**
+```bash
+$ git -c advice.detachedHead=false checkout tags/v24.0.0.0-xenon 
+```
+
 **【Tips】Remember to modify the seed and burn_fee_cap in the `.toml` file, where seed is your private key and burn_fee_cap is your burned bitcoin value.**
 
 ```toml
