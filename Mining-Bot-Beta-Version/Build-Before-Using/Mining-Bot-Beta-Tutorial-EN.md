@@ -17,7 +17,7 @@ Make sure you have installed:
 
 ### Environmental installation and configuration
 
-#### Node.js和`yarn`的安装
+#### Install Node.js and yarn
 
 Refer：[Node.js and yarn installation reference guide](https://github.com/Daemon-Technologies/docs/blob/master/_draft/Mining-Bot-Alpha-Version/Build-Before-Using/Mining-Bot-Alpha-Tutorial-EN.md)
 
