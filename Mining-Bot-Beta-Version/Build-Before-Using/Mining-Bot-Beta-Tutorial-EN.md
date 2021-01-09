@@ -189,5 +189,5 @@ Type/Paste in the browser: http://localhost:8000/`，or`http://your-ip:8000 ,e.g
 
 When you log in for the first time, you will be prompted to enter the **Lock Password.** This password is mainly used for login authentication and private key encryption protection. The lock password here has nothing to do with the previous `yarn start node1234` authentication password, and there is no need to keep the same.
 
-At this point, the program is successfully installed. The next steps will be operated on the browser page. Please refer to the [User Guide](../Use-Mining-Bot-For-Mining/User-Guide-of-Mining-Bot-EN.md).
+At this point, the program is successfully installed. The next steps will be operated on the browser page. Please refer to the [User Guide](../Use-Mining-Bot-For-Mining/User-Guide-of-Mining-Bot-Beta-EN.md).
 
