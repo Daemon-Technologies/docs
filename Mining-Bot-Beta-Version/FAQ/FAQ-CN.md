@@ -7,9 +7,6 @@
 - [Stacks Forum](https://forum.stacks.org/t/request-for-testing-alpha-mining-bot/11372)
 - [Github](https://github.com/Daemon-Technologies)
 
-## 在哪里进行挖矿比赛的注册？
-
-在[挖矿比赛注册](https://daemontechnologies.co/minestx-challenge)界面点击注册按钮进行注册，输入你的姓名、邮箱和地址信息（BTC和STX地址）。
 
 ## 如何生成我的密钥（地址）信息？
 
