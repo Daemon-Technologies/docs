@@ -10,7 +10,7 @@ This tutorial will introduce how to use mining bot for STX mining.
 
 :artificial_satellite:**[Reminder] Please refer to the video for specific instructions.**
 
-- [Stacks Mining Bot Client version 2.0.0](https://www.bilibili.com/video/BV18z4y167ss/)
+- [Stacks Mining Bot Client version 2.0.0](https://youtu.be/3VZR9TPbYsE)
 
 ## 1. Login Page Introduction
 
