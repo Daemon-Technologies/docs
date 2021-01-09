@@ -7,9 +7,6 @@ If you want to participate in the discussion and make your suggestions, you can 
 - [Stacks Forum](https://forum.stacks.org/t/request-for-testing-alpha-mining-bot/11372)
 - [Github](https://github.com/Daemon-Technologies)
 
-## Where do I sign up?
-
-Use the register button on the [competition sign-up page](https://daemontechnologies.co/minestx-challenge), and enter your name, email address, and keychain information (BTC and STX addresses).
 
 ## How do I generate a keychain?
 
