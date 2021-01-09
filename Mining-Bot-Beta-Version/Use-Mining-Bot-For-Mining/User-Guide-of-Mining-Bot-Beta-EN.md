@@ -2,65 +2,72 @@
 sort: 1
 ---
 
+# 挖矿机器人使用说明书 - Beta版
 
-# User's Guide of Mining-Bot
+本教程将会介绍如何使用挖矿机器人进行STX挖矿。
 
-This documentation will introduce to you how to mine STX using Mining-Bot
+- [前序环境搭建教程](../Build-Before-Using/Mining-Bot-Beta-Tutorial-CN.md)
 
-- [Pre-order tutorial](../Build-Before-Using/Mining-Bot-Alpha-Tutorial-EN.md)
+**【提醒】具体的使用说明大家可以参照视频。**
 
-**【Tips】 Tutorial videos released, please refer to the video for specific instructions.**
-- [Windows tutorial](https://www.youtube.com/watch?v=FXifFx0Akzc)
-- [MacOS tutorial](https://www.youtube.com/watch?v=TCtCTttsSeI)
+- [Stacks挖矿机器人客户端2.0版](https://www.bilibili.com/video/BV18z4y167ss/)
 
-## Login Page Introduction
+## 1. 登陆页面介绍
 
-When you input **http://localhost:8000/** in your browser, you will see the following interface:
+当你在浏览器中输入 **http://localhost:8000/** 的时候，会看到如下界面：
 
-![](assets/EN/index/indexPage.png)
-
-
-When you log in for the first time, you will be prompted to enter the **lock password**, which is mainly used for **login authentication** and **private key encryption protection**. After entering the same password twice, you will enter the main page of the Mining-Bot. After entering the main page, you can lock the account through the account status bar in the upper right corner of the figure below.
-
-![](assets/EN/index/lockPage1.png)
-
-After clicking **Lock Your Account**, it will jump to the following interface. You need to re-enter the lock password for the first time setting to unlock the account.
-
-![](assets/EN/index/lockPage2.png)
-
-:artificial_satellite:**【Notification】lock password cannot be recovered**
-
-The main page consists of three parts: **Public Data Page**, **Wallet Page**, and **Client Page**. Next, we will explain how to obtain mining data and participate in mining through Mining-Bot.
+![index-set-lock](assets/CN/index/index-set-lock.png)
 
 
-## Public Data Page
 
-As shown in the figure below, the public data page is designed to provide rich data sources for mining robot strategies, and the public data page is shown in the figure above. At this stage, the following information is included:
+当你第一次登陆的时候，会提示让您输入**锁定密码**，该密码主要用于**登陆认证**、**私钥加密保护**，这里的锁定密码和之前的yarn start node1234认证密码没有关系，没有必要保持一致。
 
-- Currency price information: STX, BTC trading pair information
-- Stacks chain height information
-- Stacks chain block information
+当输入两次相同的密码后，就会进入挖矿机器人的主页面。进入主页面后可以通过下图中右上角的账户状态栏进行账户锁定。
 
-![](assets/EN/publicdata/publicdataModule.png)
+![index-set-lock](assets/CN/index/index-set-lock.png)
 
 
-## Wallet Page
 
-### Bitcoin and Stacks address online generation
+点击**锁定账户**后会跳转到如下界面，需要重新输入第一次设置的锁定密码进行账户解锁。
 
-:artificial_satellite:**【Notification】If you have a BTC or STX address with 24 mnemonics, you can choose to skip this section.**
+![unlock-account](assets/CN/index/unlock-account.png)
 
+:artificial_satellite:**【提醒】该密码无法被恢复**
 
-This section refers to the instructions for generating online addresses in the [official mining documentation](https://docs.blockstack.org/mining).
+主页面由四个部分组成：**公开数据页面**、**钱包账户页面**、与**挖矿客户端页面**，**以及系统配置页面**，接下来将逐个页面讲解如何通过挖矿机器人获取挖矿数据并参与挖矿。
 
+如下图所示，公开数据页面旨在为挖矿机器人策略提供丰富的数据来源，公开数据页面如上图所示。现阶段包含如下信息：
+- 币价信息：STX、BTC交易对信息
 
-Run the following command:
+- 矿工信息
+
+- 挖矿信息
+
+- 链信息
+
+- 区块信息
+
+![public-data](assets/CN/publicdata/public-data.png)
+
+​    
+
+## 2. 钱包页面
+
+### 2.1 比特币与Stacks地址在线生成
+
+### 比特币与Stacks地址在线生成
+
+:artificial_satellite:**【提醒】如果你有24助记词的BTC或STX地址，可以选择跳过本节**
+
+本小节参考[官方挖矿文档](https://docs.blockstack.org/mining)中对于生成在线地址的指令。
+
+运行如下指令：
 
 ``` 
 npx @stacks/cli make_keychain -t
 ```
 
-After running the above command, you will see a lot of installation logs. At the end you can see a JSON, similar to:
+运行上述指令后会看到很多安装日志，在最后你可以看到一个JSON，类似于：
 
 ```
 {
@@ -73,62 +80,129 @@ After running the above command, you will see a lot of installation logs. At the
   }
 }
 ```
-:artificial_satellite:**【Notification】Information above must be saved carefully such as Bitcoin and Stacks private key**
+:artificial_satellite:**【提醒】上述信息请务必保存，为比特币、Stacks私钥等核心信息**
+
+### 2.2 添加账户：比特币与Stacks地址导入
+点击钱包账户页面中的**添加账户**一栏，会弹出导入地址的对话框，将24个助记词按照拷贝粘贴至对话框中（助记词之间用空格隔开），并选择相应类型，便可完成地址导入。
+
+在钱包账户页面中点击**添加账户**：
+
+![](assets/CN/wallet/importAddress1.png)
+
+将24个助记词按照拷贝粘贴至对话框中（助记词之间用空格隔开），并选择账户类型，点击提交：
+
+![](assets/CN/wallet/importAddress2.png)
+
+可以在列表中看到新增的地址，以及其对应的类型与账户余额。
+
+![](assets/CN/wallet/importAddress3.png)
 
 
-### Bitcoin and Stacks address import
 
-Click the **Add** button on the wallet account page, and a dialog box for importing addresses will pop up. Copy and paste 24 mnemonic words into the dialog box (separated by spaces), and select The corresponding type can complete the address import.
+**获取BTC测试币：**https://testnet-faucet.mempool.co/
 
-Click **Add** on the wallet account page:
+注意：将网络切换为Xenon测试网络，在页面的右上角显示的是当前的测试网。
 
-![](assets/EN/wallet/importAddress1.png)
+![xenon-testnet](assets/CN/wallet/xenon-testnet.png)
 
-Copy and paste the 24 mnemonic words into the dialog box (separated by spaces), select the account type, and click submit:
 
-![](assets/EN/wallet/importAddress2.png)
 
-You can see the newly added address in the list, as well as its corresponding type and account balance.
+## 3. 客户端界面
 
-![](assets/EN/wallet/importAddress3.png)
+进入客户端 页面，看到当前状态为Mining-Local Server已运行，但是`stacks-node`程序未找到。
 
-## Client Page
+![current_state_mining_cn](assets/CN/client/current_state_mining_cn.png)
 
-**【Tips】This part differs a lot by version update, you can follow the video to learn. Documentation will be updated later**
-- [Recommended Video](https://www.youtube.com/watch?v=TCtCTttsSeI)
+ 
 
-When you enter the client interface, you will see two panels **Mining Operation Board** and **Mining Info**. If you enter the client for the first time, you will see the current status is displayed as **No Mining Program Running**
+### 3.1 下载stacks-node
 
-![](assets/EN/client/clientPage.png)
+点击`下载stacks-node`按钮等待下载。
 
-### Start Mining
+![downloading-stacks-node_cn](assets/CN/client/downloading-stacks-node_cn.png)
 
-Click **Start Mining** in **Mining Operation Board**, and the account selection dialog box shown in the figure below will pop up. The account list here is the list of BTC addresses imported on the wallet page. If you have not imported the addresses on the wallet page, you cannot continue mining.
 
-![](assets/EN/client/startMining1.png)
 
-After selecting the account, please set the burning amount. The burning unit is the smallest unit of Bitcoin, Satoshi. Select the appropriate amount to burn in Mining-Program and click **Finish**.
+下载完成后，状态发生变化，满足挖矿条件：
 
-![](assets/EN/client/startMining2.png)
+![finish-downloading_cn](assets/CN/client/finish-downloading_cn.png)
 
-If the account balance is sufficient, it will show that the mining program is running:
 
-![](assets/EN/client/startMining3.png)
 
-If the account balance is not sufficient, a balance reminder will be displayed and you need to recharge bitcoin:
+### 3.2 开始挖矿
 
-![](assets/EN/client/balanceNotification.png)
+账户选择：
 
-### Stop Mining
+![start-mining-cn](assets/CN/client/start-mining_cn.png)
 
-When the current status shows that a process is running, you can click **Stop Mining**. When the status is refreshed to no node running, it means that the node has stopped successfully:
 
-![](assets/EN/client/stopMining.png)
 
-### Miner Info
+燃烧量设置与是否开启Debug模式：
 
-The figure below shows the number of blocks corresponding to the miner's address, the number of mining participation, and the total number of bitcoins burned. This information has certain reference value for setting the amount of combustion.
+![burn-fee-set-up_cn](assets/CN/client/burn-fee-set-up_cn.png)
 
-![](assets/EN/client/minerInfo.png)
+
+
+开启Debug模式，可以在挖矿开始后命令行界面看到更多输出信息。
+
+
+
+配置要同步的BTC节点信息：
+
+![node-set-up_cn](assets/CN/client/node-set-up_cn.png)
+
+
+
+点击完成后，弹出授权密码窗口：
+
+![authCode_cn](assets/CN/client/authCode_cn.png)
+
+本例中，输入：`node1234`，点击授权后，等待一定的时间界面自动跳转，即可进入挖矿。
+
+检查挖矿状态：
+
+![mining_cn](assets/CN/client/mining_cn.png)
+
+启动成功，可以看到状态界面显示出了自己的挖矿地址。
+
+服务端信息：
+
+![mining-server-info_cn](assets/CN/client/mining-server-info_cn.png)
+
+
+
+服务端正在运行中。
+
+
+
+## 4. 系统配置界面
+
+![system_config_cn](assets/CN/systemconfig/system_config_cn.png)
+
+
+
+如果网络正常，显示的是主链和本地链的信息，可以进行如Mining-Local-Server、本地Stacks链、要同步的BTC节点等信息的配置。
+
+在启动挖矿配置比特币节点时，填入了本地的节点信息，会在系统配置界面进行同步更新。
+
+
+
+![btc-node-info-local_cn](assets/CN/client/btc-node-info-local_cn.png)
+
+
+
+### 重置锁定密码
+
+如果需要重置Mining-Bot本地存储的信息，可以进行重置操作，这将清空我们存储的锁定密码和账户信息。
+
+![reset-account-info_cn](assets/CN/systemconfig/reset-account-info_cn.png)
+
+
+
+点击确认 后，会回到界面：
+
+![index-set-lock](assets/CN/index/index-set-lock.png)
+
+以上就是所有的操作。
 
 
