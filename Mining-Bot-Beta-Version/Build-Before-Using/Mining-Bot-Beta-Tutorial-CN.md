@@ -189,5 +189,5 @@ unzip Mining-Bot_V2.0.0_mac.zip -d Mining-Bot-Beta/
 
 当你第一次登陆的时候，会提示让您输入**锁定密码**，该密码主要用于**登陆认证**、**私钥加密保护**，这里的锁定密码和之前的yarn start node1234认证密码没有关系，没有必要保持一致。
 
-至此，程序安装成功，后面步骤将会在浏览器页面操作，请参考[用户手册](../Use-Mining-Bot-For-Mining/User-Guide-of-Mining-Bot-Beta-CN).
+至此，程序安装成功，后面步骤将会在浏览器页面操作，请参考[用户手册](../Use-Mining-Bot-For-Mining/User-Guide-of-Mining-Bot-Beta-CN.md).
 
