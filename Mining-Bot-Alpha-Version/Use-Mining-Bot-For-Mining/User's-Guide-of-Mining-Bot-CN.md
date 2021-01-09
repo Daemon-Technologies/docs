@@ -10,8 +10,8 @@ sort: 2
 - [前序环境搭建教程](../Build-Before-Using/Mining-Bot-Alpha-Tutorial-EN.md)
 
 **【提醒】具体的使用说明大家可以参照视频。**
-- [Windows 教程](https://www.youtube.com/watch?v=FXifFx0Akzc)
-- [MacOS 教程](https://www.youtube.com/watch?v=TCtCTttsSeI)
+- [Windows 教程](https://www.bilibili.com/video/BV1Lp4y167jd)
+- [MacOS 教程](https://www.bilibili.com/video/BV11X4y1u7sL)
 
 ## 登陆页面介绍
 

@@ -11,8 +11,8 @@ sort: 2
 **【提醒】建议全程保持科学上网。**
 
 **【提醒】如果想获取更全面的信息，请查看我们的视频教程。**
-- [Windows 教程](https://www.youtube.com/watch?v=FXifFx0Akzc)
-- [MacOS 教程](https://www.youtube.com/watch?v=TCtCTttsSeI)
+- [Windows 教程](https://www.bilibili.com/video/BV1Lp4y167jd)
+- [MacOS 教程](https://www.bilibili.com/video/BV11X4y1u7sL)
 
 ## 介绍
 
