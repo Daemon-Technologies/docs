@@ -24,7 +24,7 @@ sort: 2
 
 当输入两次相同的密码后，就会进入挖矿机器人的主页面。进入主页面后可以通过下图中右上角的账户状态栏进行账户锁定。
 
-![index-set-lock](assets/CN/index/index-set-lock.png)
+![index-lock-account](assets/CN/index/index-lock-account.png)
 
 
 
