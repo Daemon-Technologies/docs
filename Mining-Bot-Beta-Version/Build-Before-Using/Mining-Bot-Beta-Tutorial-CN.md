@@ -1,6 +1,6 @@
 # 挖矿机器人软件安装
 
-本文的目标：演示如何运运行Mining Bot Beta版本。
+本文的目标：演示如何运行Mining Bot Beta版本。
 
 ## 环境要求：
 
@@ -19,7 +19,11 @@
 
 #### wget的安装
 
-**MacOS上安装**：`brew install wget`
+**MacOS上安装**：
+
+```bash
+brew install wget
+```
 
 **Ubuntu/Debian上安装**，执行：
 
@@ -41,7 +45,11 @@ wget --verison
 
 #### unzip的安装
 
-**MacOS**： `brew install unzip`
+**MacOS**： 
+
+```bash
+brew install unzip
+```
 
 **Ubuntu/Debian上安装**，执行：
 
@@ -66,11 +74,21 @@ sudo yum install unzip
 
 打开命令行窗口，Win10用户打开新的WSL窗口。
 
-新建一个空目录：`mkdir stacks-mining`，目录名可以随便取，这里演示目的，取名为`stacks-mining`。
+新建一个空目录：
 
-进入此空目录：`cd stacks-mining`。
+```bash
+mkdir stacks-mining
+```
 
-访问链接 ：https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/2.0.0
+目录名可以随便取，这里演示目的，取名为`stacks-mining`。
+
+进入此空目录：
+
+```bash
+cd stacks-mining
+```
+
+访问链接 ：[Mining-Bot Releases](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/2.0.0)
 
 进入到Mining-Bot Beta 2.0.0 Release界面：
 
@@ -167,5 +185,5 @@ unzip Mining-Bot_V2.0.0_mac.zip -d Mining-Bot-Beta/
 
 当你第一次登陆的时候，会提示让您输入**锁定密码**，该密码主要用于**登陆认证**、**私钥加密保护**，这里的锁定密码和之前的yarn start node1234认证密码没有关系，没有必要保持一致。
 
-至此，程序安装成功，后面步骤将会在浏览器页面操作，请参考用户手册。
+至此，程序安装成功，后面步骤将会在浏览器页面操作，请参考[用户手册](../Use-Mining-Bot-For-Mining/User's-Guide-of-Mining-Bot-Beta-CN).
 
