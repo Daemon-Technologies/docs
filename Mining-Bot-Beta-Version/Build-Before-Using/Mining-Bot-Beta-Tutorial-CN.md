@@ -11,27 +11,282 @@ sort: 2
 
 ## 环境要求：
 
-确保已经安装：
-
-- `Nodej >= 14`
+MacOS系统：
+- `Node.js >= 14`
 - `yarn`包管理工具
-- `wget`
+
+`wget`和`unzip`命令可以不安装，通过浏览器即可下载安装包和解压安装包。
+
+Linux/Windows WSL确保已经安装：
+- `Node.js >= 14`
+- `yarn`包管理工具
+- `wget`工具
 - `unzip`工具
 
-### 环境安装与配置
+说明：在本教程中，`wget`和`unzip`命令主要是为了获取放在Github Release界面的安装包，如果可以通过界面访问Github Release界面下载安装包并解压，则无需使用`wget`和`unzip`命令。这两个命令主要是针对服务器端用户，或者想通过命令行来下载安装包并解压的用户。
 
-#### Node.js和`yarn`的安装
+## 环境安装与配置
 
-参考：[Node.js和yarn安装参考指南](https://github.com/Daemon-Technologies/docs/blob/master/_draft/Mining-Bot-Alpha-Version/Build-Before-Using/Mining-Bot-Alpha-Tutorial-CN.md)
+### MacOS上
 
-#### wget的安装
+#### 1.Node.js的安装
 
-**MacOS上安装**：
+我们推荐你使用`nvm`来控制Nodejs的版本并进行nodejs的安装。本教程来自[nvm官方文档](https://github.com/nvm-sh/nvm)，如果想获取更详细的信息请查阅链接中的文档。
 
-```bash
-brew install wget
+为了安装或更新`nvm`，你需要运行[安装脚本](https://github.com/nvm-sh/nvm/blob/v0.37.0/install.sh)。你需要下载或者直接手动运行脚本，或者可以通过以下两种命令的任意一种来进行安装：
+
+```shell
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
 ```
 
+或
+
+```shell
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+```
+
+然后你可以使用以下命令来检验是否`nvm`安装成功：
+
+```shell
+nvm
+```
+
+如果安装成功，输出内容会跟下面类似：
+
+```shell
+Node Version Manager
+
+Note: <version> refers to any version-like string nvm understands. This includes:
+  - full or partial version numbers, starting with an optional "v" (0.10, v0.1.2, v1)
+  - default (built-in) aliases: node, stable, unstable, iojs, system
+  - custom aliases you define with `nvm alias foo`
+
+ Any options that produce colorized output should respect the `--no-colors` option.
+
+Usage:
+  nvm --help                                Show this message
+  nvm --version                             Print out the installed version of nvm
+  nvm install [-s] <version>                Download and install a <version>, [-s] from source. Uses .nvmrc if available
+    --reinstall-packages-from=<version>     When installing, reinstall packages installed in <node|iojs|node version number>
+    --lts                                   When installing, only select from LTS (long-term support) versions
+    --lts=<LTS name>                        When installing, only select from versions for a specific LTS line
+    --skip-default-packages                 When installing, skip the default-packages file if it exists
+    --latest-npm                            After installing, attempt to upgrade to the latest working npm on the given node version
+    --no-progress                           Disable the progress bar on any downloads
+  nvm uninstall <version>                   Uninstall a version
+  nvm uninstall --lts                       Uninstall using automatic LTS (long-term support) alias `lts/*`, if available.
+  nvm uninstall --lts=<LTS name>            Uninstall using automatic alias for provided LTS line, if available.
+  nvm use [--silent] <version>              Modify PATH to use <version>. Uses .nvmrc if available
+    --lts                                   Uses automatic LTS (long-term support) alias `lts/*`, if available.
+    --lts=<LTS name>                        Uses automatic alias for provided LTS line, if available.
+  nvm exec [--silent] <version> [<command>] Run <command> on <version>. Uses .nvmrc if available
+    --lts                                   Uses automatic LTS (long-term support) alias `lts/*`, if available.
+    --lts=<LTS name>                        Uses automatic alias for provided LTS line, if available.
+  nvm run [--silent] <version> [<args>]     Run `node` on <version> with <args> as arguments. Uses .nvmrc if available
+    --lts                                   Uses automatic LTS (long-term support) alias `lts/*`, if available.
+    --lts=<LTS name>                        Uses automatic alias for provided LTS line, if available.
+  nvm current                               Display currently activated version of Node
+  nvm ls                                    List installed versions
+  nvm ls <version>                          List versions matching a given <version>
+  nvm ls-remote                             List remote versions available for install
+    --lts                                   When listing, only show LTS (long-term support) versions
+  nvm ls-remote <version>                   List remote versions available for install, matching a given <version>
+    --lts                                   When listing, only show LTS (long-term support) versions
+    --lts=<LTS name>                        When listing, only show versions for a specific LTS line
+  nvm version <version>                     Resolve the given description to a single local version
+  nvm version-remote <version>              Resolve the given description to a single remote version
+    --lts                                   When listing, only select from LTS (long-term support) versions
+    --lts=<LTS name>                        When listing, only select from versions for a specific LTS line
+  nvm deactivate                            Undo effects of `nvm` on current shell
+  nvm alias [<pattern>]                     Show all aliases beginning with <pattern>
+  nvm alias <name> <version>                Set an alias named <name> pointing to <version>
+  nvm unalias <name>                        Deletes the alias named <name>
+  nvm install-latest-npm                    Attempt to upgrade to the latest working `npm` on the current node version
+  nvm reinstall-packages <version>          Reinstall global `npm` packages contained in <version> to current version
+  nvm unload                                Unload `nvm` from shell
+  nvm which [current | <version>]           Display path to installed node version. Uses .nvmrc if available
+  nvm cache dir                             Display path to the cache directory for nvm
+  nvm cache clear                           Empty cache directory for nvm
+
+Example:
+  nvm install 8.0.0                     Install a specific version number
+  nvm use 8.0                           Use the latest available 8.0.x release
+  nvm run 6.10.3 app.js                 Run app.js using node 6.10.3
+  nvm exec 4.8.3 node app.js            Run `node app.js` with the PATH pointing to node 4.8.3
+  nvm alias default 8.1.0               Set default node version on a shell
+  nvm alias default node                Always default to the latest available node version on a shell
+
+Note:
+  to remove, delete, or uninstall nvm - just remove the `$NVM_DIR` folder (usually `~/.nvm`)
+```
+
+然后你可以使用以下命令来安装Nodejs：
+
+```shell
+nvm install 14.15.0
+```
+
+然后使用以下命令检查`node`和`npm`是否安装成功：
+
+```shell
+# node命令
+node -v
+# node版本输出
+v14.15.0
+# npm命令
+npm -v
+# npm版本输出
+6.14.8
+```
+
+
+#### 2.yarn的安装
+
+
+我们使用`npm`来安装`yarn`：
+
+```shell
+npm install -g yarn
+```
+
+来检验`yarn`是否安装成功：
+
+```shell
+# 使用如下命令
+yarn -v
+# 版本输出
+1.22.4
+```
+
+
+### Linux/Windows WSL
+
+#### 1.Node.js安装
+我们推荐你使用`nvm`来控制Nodejs的版本并进行nodejs的安装。本教程来自[nvm官方文档](https://github.com/nvm-sh/nvm)，如果想获取更详细的信息请查阅链接中的文档。
+
+为了安装或更新`nvm`，你需要运行[安装脚本](https://github.com/nvm-sh/nvm/blob/v0.37.0/install.sh)。你需要下载或者直接手动运行脚本，或者可以通过以下两种命令的任意一种来进行安装：
+
+```shell
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+```
+
+或
+
+```shell
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+```
+
+然后你可以使用以下命令来检验是否`nvm`安装成功：
+
+```shell
+nvm
+```
+
+如果安装成功，输出内容会跟下面类似：
+
+```shell
+Node Version Manager
+
+Note: <version> refers to any version-like string nvm understands. This includes:
+  - full or partial version numbers, starting with an optional "v" (0.10, v0.1.2, v1)
+  - default (built-in) aliases: node, stable, unstable, iojs, system
+  - custom aliases you define with `nvm alias foo`
+
+ Any options that produce colorized output should respect the `--no-colors` option.
+
+Usage:
+  nvm --help                                Show this message
+  nvm --version                             Print out the installed version of nvm
+  nvm install [-s] <version>                Download and install a <version>, [-s] from source. Uses .nvmrc if available
+    --reinstall-packages-from=<version>     When installing, reinstall packages installed in <node|iojs|node version number>
+    --lts                                   When installing, only select from LTS (long-term support) versions
+    --lts=<LTS name>                        When installing, only select from versions for a specific LTS line
+    --skip-default-packages                 When installing, skip the default-packages file if it exists
+    --latest-npm                            After installing, attempt to upgrade to the latest working npm on the given node version
+    --no-progress                           Disable the progress bar on any downloads
+  nvm uninstall <version>                   Uninstall a version
+  nvm uninstall --lts                       Uninstall using automatic LTS (long-term support) alias `lts/*`, if available.
+  nvm uninstall --lts=<LTS name>            Uninstall using automatic alias for provided LTS line, if available.
+  nvm use [--silent] <version>              Modify PATH to use <version>. Uses .nvmrc if available
+    --lts                                   Uses automatic LTS (long-term support) alias `lts/*`, if available.
+    --lts=<LTS name>                        Uses automatic alias for provided LTS line, if available.
+  nvm exec [--silent] <version> [<command>] Run <command> on <version>. Uses .nvmrc if available
+    --lts                                   Uses automatic LTS (long-term support) alias `lts/*`, if available.
+    --lts=<LTS name>                        Uses automatic alias for provided LTS line, if available.
+  nvm run [--silent] <version> [<args>]     Run `node` on <version> with <args> as arguments. Uses .nvmrc if available
+    --lts                                   Uses automatic LTS (long-term support) alias `lts/*`, if available.
+    --lts=<LTS name>                        Uses automatic alias for provided LTS line, if available.
+  nvm current                               Display currently activated version of Node
+  nvm ls                                    List installed versions
+  nvm ls <version>                          List versions matching a given <version>
+  nvm ls-remote                             List remote versions available for install
+    --lts                                   When listing, only show LTS (long-term support) versions
+  nvm ls-remote <version>                   List remote versions available for install, matching a given <version>
+    --lts                                   When listing, only show LTS (long-term support) versions
+    --lts=<LTS name>                        When listing, only show versions for a specific LTS line
+  nvm version <version>                     Resolve the given description to a single local version
+  nvm version-remote <version>              Resolve the given description to a single remote version
+    --lts                                   When listing, only select from LTS (long-term support) versions
+    --lts=<LTS name>                        When listing, only select from versions for a specific LTS line
+  nvm deactivate                            Undo effects of `nvm` on current shell
+  nvm alias [<pattern>]                     Show all aliases beginning with <pattern>
+  nvm alias <name> <version>                Set an alias named <name> pointing to <version>
+  nvm unalias <name>                        Deletes the alias named <name>
+  nvm install-latest-npm                    Attempt to upgrade to the latest working `npm` on the current node version
+  nvm reinstall-packages <version>          Reinstall global `npm` packages contained in <version> to current version
+  nvm unload                                Unload `nvm` from shell
+  nvm which [current | <version>]           Display path to installed node version. Uses .nvmrc if available
+  nvm cache dir                             Display path to the cache directory for nvm
+  nvm cache clear                           Empty cache directory for nvm
+
+Example:
+  nvm install 8.0.0                     Install a specific version number
+  nvm use 8.0                           Use the latest available 8.0.x release
+  nvm run 6.10.3 app.js                 Run app.js using node 6.10.3
+  nvm exec 4.8.3 node app.js            Run `node app.js` with the PATH pointing to node 4.8.3
+  nvm alias default 8.1.0               Set default node version on a shell
+  nvm alias default node                Always default to the latest available node version on a shell
+
+Note:
+  to remove, delete, or uninstall nvm - just remove the `$NVM_DIR` folder (usually `~/.nvm`)
+```
+
+然后你可以使用以下命令来安装Nodejs：
+
+```shell
+nvm install 14.15.0
+```
+
+然后使用以下命令检查`node`和`npm`是否安装成功：
+
+```shell
+# node命令
+node -v
+# node版本输出
+v14.15.0
+# npm命令
+npm -v
+# npm版本输出
+6.14.8
+```
+
+#### 2.yarn安装
+我们使用`npm`来安装`yarn`：
+
+```shell
+npm install -g yarn
+```
+
+来检验`yarn`是否安装成功：
+
+```shell
+# 使用如下命令
+yarn -v
+# 版本输出
+1.22.4
+```
+
+#### 3.wget的安装
 **Ubuntu/Debian上安装**，执行：
 
 ```bash
@@ -50,13 +305,7 @@ yum install wget
 wget --verison
 ```
 
-#### unzip的安装
-
-**MacOS**： 
-
-```bash
-brew install unzip
-```
+#### 4.unzip的安装
 
 **Ubuntu/Debian上安装**，执行：
 
@@ -74,10 +323,21 @@ sudo yum install unzip
 
 ### 步骤一：下载安装包
 
-两种下载方式：
+#### 方式一：图形界面下载
 
-- 命令行下载（本文演示）
-- 图形界面下载
+在桌面（任意你喜好的位置均可）新建一个文件夹，命名为`stacks-mining`.
+
+访问链接 ：[Mining-Bot Releases](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/2.0.0)
+
+进入到Mining-Bot Beta 2.0.0 Release界面：
+
+![Mining-Bot-Release-Page](assets/Mining-Bot-Release-Page.png)
+
+
+**直接点击对应的版本，直接浏览器下载**，选择存储到当前工作目录：`stacks-mining`。
+
+
+#### 方式二：命令行下载
 
 打开命令行窗口，Win10用户打开新的WSL窗口。
 
@@ -100,16 +360,12 @@ cd stacks-mining
 进入到Mining-Bot Beta 2.0.0 Release界面：
 
 
-
 ![Mining-Bot-Release-Page](assets/Mining-Bot-Release-Page.png)
-
 
 
 **选择自己的系统版本进行链接复制与下载**。在本教程中，本地环境为MacOS，选择[Mining-Bot_V2.0.0_mac.zip](https://github.com/Daemon-Technologies/Mining-Bot/releases/download/2.0.0/Mining-Bot_V2.0.0_mac.zip)，右键复制链接：
 
 ![Right-Click-Copy-Link](assets/Right-Click-Copy-Link.png)
-
-
 
 
 
@@ -121,7 +377,6 @@ wget https://github.com/Daemon-Technologies/Mining-Bot/releases/download/2.0.0/M
 
 ![wget-mining-bot-zip](assets/wget-mining-bot-zip.png)
 
-**或者直接点击对应的版本，直接浏览器下载**，选择存储到当前工作目录：`stacks-mining`。
 
 ### 步骤二：解压zip文件
 
@@ -141,7 +396,6 @@ unzip Mining-Bot_V2.0.0_mac.zip -d Mining-Bot-Beta/
 ![ls-unzip-d](assets/ls-unzip-d.png)
 
 
-
 ### 步骤三：开启程序
 
 进入解压的文件夹：`Mining-Bot-Beta`。
@@ -159,7 +413,6 @@ unzip Mining-Bot_V2.0.0_mac.zip -d Mining-Bot-Beta/
 ![yarn-node-modules](assets/yarn-node-modules.png)
 
 
-
 #### 1.启动Mining-Bot
 
 执行命令：`yarn start node1234`
@@ -169,8 +422,7 @@ unzip Mining-Bot_V2.0.0_mac.zip -d Mining-Bot-Beta/
 启动成功显示信息如下：
 
 ![yarn-start-node1234](assets/yarn-start-node1234.png)
-
-
+$$
 
 注意：如果使用的是服务器，需要根据自己服务器的`ip地址`来访问`Mining-Bot`。
 
