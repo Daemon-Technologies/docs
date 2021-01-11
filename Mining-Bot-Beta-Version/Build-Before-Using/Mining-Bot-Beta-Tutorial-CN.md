@@ -11,13 +11,15 @@ sort: 2
 
 ## 环境要求：
 
-MacOS系统：
+**MacOS系统确保已经安装**：
+
 - `Node.js >= 14`
 - `yarn`包管理工具
 
 `wget`和`unzip`命令可以不安装，通过浏览器即可下载安装包和解压安装包。
 
-Linux/Windows WSL确保已经安装：
+**Linux/Windows WSL确保已经安装**：
+
 - `Node.js >= 14`
 - `yarn`包管理工具
 - `wget`工具
@@ -377,15 +379,17 @@ wget https://github.com/Daemon-Technologies/Mining-Bot/releases/download/2.0.0/M
 
 ![wget-mining-bot-zip](assets/wget-mining-bot-zip.png)
 
-
 ### 步骤二：解压zip文件
 
-两种方式：
+#### 方式一：图形界面解压
 
-1. 命令行解压（本文演示）
-2. 图形界面双击解压，或者右键解压
+MacOS上双击即可解压文件到当前目录：
 
-这里演示第一种命令行解压方式，通过`unzip -d`命令：
+![mac-unzip-release](assets/mac-unzip-release.png)
+
+#### 方式二：命令行解压
+
+通过`unzip -d`命令：
 
 ```bash
 unzip Mining-Bot_V2.0.0_mac.zip -d Mining-Bot-Beta/
@@ -422,7 +426,7 @@ unzip Mining-Bot_V2.0.0_mac.zip -d Mining-Bot-Beta/
 启动成功显示信息如下：
 
 ![yarn-start-node1234](assets/yarn-start-node1234.png)
-$$
+
 
 注意：如果使用的是服务器，需要根据自己服务器的`ip地址`来访问`Mining-Bot`。
 
