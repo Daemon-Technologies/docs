@@ -299,7 +299,7 @@ yarn -v
 1.22.4
 ```
 
-#### 3.安装wget 
+#### 3.Install wget 
 
 **On Ubuntu/Debian**:
 
@@ -319,7 +319,7 @@ Make sure to install, check the version:
 wget --verison
 ```
 
-#### 4.安装unzip
+#### 4.Install unzip
 
 **On Ubuntu/Debian**:
 
