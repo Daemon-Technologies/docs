@@ -2,7 +2,9 @@
 
 ## Introduction
 
-Daemon Technologies is a software development and consulting company headquartered in Hong Kong. Daemon helps clients integrate the latest in open source software. The results are more secure products and services, at lower backend cost.
+Daemon Technologies 地灵科技 is a software company focused on driving the adoption of Stacks technology in Asia.
+
+We build technology around under served opportunities in the Stacks ecosystem, including STX Mining & Stacking via Proof of Transfer (PoX), DeFi with Clarity Smart Contracts, and more.
 
 This documentation website is used for product tutorials and infrastructure introductions.
 
