@@ -341,11 +341,11 @@ sudo yum install unzip
 
 On Desktop(or any other location you like) make a new directory, name it as `stacks-mining`.
 
-Go to: [Mining-Bot Releases](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/2.0.0)
+Go to: [Mining-Bot Releases](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/2.1.0)
 
 Now you can see Mining-Bot Beta 2.0.0 Release page：
 
-![Mining-Bot-Release-Page](assets/Mining-Bot-Release-Page.png)
+![Mining-Bot-Release-Page](assets/Mining-Bot-Release-Page-2.1.0.png)
 
 **Go directly click the version matching your system, click it and download**, select the directory to save, which is the directory you make above: `stacks-mining`.
 
@@ -367,29 +367,29 @@ Enter this empty directory:
 cd stacks-mining
 ```
 
-Access link: [Mining-Bot Releases](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/2.0.0)
+Access link: [Mining-Bot Releases](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/2.1.0)
 
-Enter the Mining-Bot Beta 2.0.0 Release interface:
+Enter the Mining-Bot Beta 2.1.0 Release interface:
 
-![Mining-Bot-Release-Page](assets/Mining-Bot-Release-Page.png)
-
-
-
-Choose your own system version to copy and download the link. In this tutorial, the local environment is MacOS, select [Mining-Bot_V2.0.0_mac.zip](https://github.com/Daemon-Technologies/Mining-Bot/releases/download/2.0.0/Mining-Bot_V2.0.0_mac.zip), right click to copy the link:
+![Mining-Bot-Release-Page](assets/Mining-Bot-Release-Page-2.1.0.png)
 
 
 
-![Right-Click-Copy-Link](assets/Right-Click-Copy-Link.png)
+Choose your own system version to copy and download the link. In this tutorial, the local environment is MacOS, select [Mining-Bot_V2.1.0_mac.zip](https://github.com/Daemon-Technologies/Mining-Bot/releases/download/2.1.0/Mining-Bot_V2.1.0_mac.zip), right click to copy the link:
+
+
+
+![Right-Click-Copy-Link](assets/Right-Click-Copy-Link-2.1.0.png)
 
 
 
 Use the `wget` command to download the `zip` file of the corresponding system:
 
 ```bash
-wget https://github.com/Daemon-Technologies/Mining-Bot/releases/download/2.0.0/Mining-Bot_V2.0.0_mac.zip
+wget https://github.com/Daemon-Technologies/Mining-Bot/releases/download/2.1.0/Mining-Bot_V2.1.0_mac.zip
 ```
 
-![wget-mining-bot-zip](assets/wget-mining-bot-zip.png)
+![wget-mining-bot-zip](assets/wget-mining-bot-zip-2.1.0.png)
 
 Or directly click the corresponding version, download it directly from the browser, and choose to store it in the current working directory: `stacks-mining`。
 
@@ -399,7 +399,7 @@ Or directly click the corresponding version, download it directly from the brows
 
 On MacOS, double click the `.zip` file and it will be unzipped into the current working directory:
 
-![mac-unzip-release](assets/mac-unzip-release.png)
+![mac-unzip-release](assets/mac-unzip-release-2.1.0.png)
 
 
 
@@ -408,34 +408,34 @@ On MacOS, double click the `.zip` file and it will be unzipped into the current 
 Here is a demonstration of the way via `unzip -d` command：
 
 ```bash
-unzip Mining-Bot_V2.0.0_mac.zip -d Mining-Bot-Beta/
+unzip Mining-Bot_V2.1.0_mac.zip -d Mining-Bot-Betamac-unzip-release-2.1.0/
 ```
 
 Among them, `-d` represents the name of the output directory. If it does not exist, create a new directory and output the compressed file content to the file directory. Here we output to the `Mining-Bot-Beta` folder under the current directory (this directory will be created).
 
-![ls-unzip-d](assets/ls-unzip-d.png)
+![ls-unzip-d](assets/ls-unzip-d-2.1.0.png)
 
 
 
 ### Step 3: Start the program
 
-Enter the unzipped folder: `Mining-Bot-Beta`。
+Enter the unzipped folder: `Mining-Bot-Beta-2.1.0`。
 
 Excute the command: 
 
 ```bash
-cd Mining-Bot-Beta
+cd Mining-Bot-Beta-2.1.0
 ```
 
 Check the file:`ls`
 
-![ls-files-in-mining-bot-beta](assets/ls-files-in-mining-bot-beta.png)
+![ls-files-in-mining-bot-beta](assets/ls-files-in-mining-bot-beta-2.1.0.png)
 
 Run`yarn install` command or `npm install`, or directly use `yarn`, install dependent packages and ensure that the Nodejs version is greater than 14.
 
 After the installation is complete, the `node_modules` folder appears.
 
-![yarn-node-modules](assets/yarn-node-modules.png)
+![yarn-node-modules](assets/yarn-node-modules-2.1.0.png)
 
 
 
@@ -447,7 +447,7 @@ And，`node1234` is the authentication password, configure after `yarn start`.
 
 The information displayed when successful startup is as follows:
 
-![yarn-start-node1234](assets/yarn-start-node1234.png)
+![yarn-start-node1234](assets/yarn-start-node1234-2.1.0.png)
 
 
 

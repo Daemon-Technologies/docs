@@ -329,11 +329,11 @@ sudo yum install unzip
 
 在桌面（任意你喜好的位置均可）新建一个文件夹，命名为`stacks-mining`.
 
-访问链接 ：[Mining-Bot Releases](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/2.0.0)
+访问链接 ：[Mining-Bot Releases](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/2.1.0)
 
-进入到Mining-Bot Beta 2.0.0 Release界面：
+进入到Mining-Bot Beta 2.1.0 Release界面：
 
-![Mining-Bot-Release-Page](assets/Mining-Bot-Release-Page.png)
+![Mining-Bot-Release-Page](assets/Mining-Bot-Release-Page-2.1.0.png)
 
 
 **直接点击对应的版本，直接浏览器下载**，选择存储到当前工作目录：`stacks-mining`。
@@ -357,27 +357,26 @@ mkdir stacks-mining
 cd stacks-mining
 ```
 
-访问链接 ：[Mining-Bot Releases](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/2.0.0)
+访问链接 ：[Mining-Bot Releases](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/2.1.0)
 
 进入到Mining-Bot Beta 2.0.0 Release界面：
 
 
-![Mining-Bot-Release-Page](assets/Mining-Bot-Release-Page.png)
+![Mining-Bot-Release-Page](assets/Mining-Bot-Release-Page-2.1.0.png)
 
+**选择自己的系统版本进行链接复制与下载**。在本教程中，本地环境为MacOS，选择[Mining-Bot_V2.1.0_mac.zip](https://github.com/Daemon-Technologies/Mining-Bot/releases/download/2.1.0/Mining-Bot_V2.1.0_mac.zip)，右键复制链接地址：
 
-**选择自己的系统版本进行链接复制与下载**。在本教程中，本地环境为MacOS，选择[Mining-Bot_V2.0.0_mac.zip](https://github.com/Daemon-Technologies/Mining-Bot/releases/download/2.0.0/Mining-Bot_V2.0.0_mac.zip)，右键复制链接：
-
-![Right-Click-Copy-Link](assets/Right-Click-Copy-Link.png)
+![Right-Click-Copy-Link](assets/Right-Click-Copy-Link-2.1.0.png)
 
 
 
 使用`wget`命令下载对应系统的`zip`文件：
 
 ```bash
-wget https://github.com/Daemon-Technologies/Mining-Bot/releases/download/2.0.0/Mining-Bot_V2.0.0_mac.zip
+wget https://github.com/Daemon-Technologies/Mining-Bot/releases/download/2.1.0/Mining-Bot_V2.1.0_mac.zip
 ```
 
-![wget-mining-bot-zip](assets/wget-mining-bot-zip.png)
+![wget-mining-bot-zip](assets/wget-mining-bot-zip-2.1.0.png)
 
 ### 步骤二：解压zip文件
 
@@ -385,36 +384,36 @@ wget https://github.com/Daemon-Technologies/Mining-Bot/releases/download/2.0.0/M
 
 MacOS上双击即可解压文件到当前目录：
 
-![mac-unzip-release](assets/mac-unzip-release.png)
+![mac-unzip-release](assets/mac-unzip-release-2.1.0.png)
 
 #### 方式二：命令行解压
 
 通过`unzip -d`命令：
 
 ```bash
-unzip Mining-Bot_V2.0.0_mac.zip -d Mining-Bot-Beta/
+unzip Mining-Bot_V2.1.0_mac.zip -d Mining-Bot-Beta-2.1.0/
 ```
 
 其中，`-d`表示解压到的目录名称，不存在则新建目录，并将压缩文件内容输出到该文件目录，这里我们输出到当前目录下的`Mining-Bot-Beta`文件夹（会新建此目录）。
 
-![ls-unzip-d](assets/ls-unzip-d.png)
+![ls-unzip-d](assets/ls-unzip-d-2.1.0.png)
 
 
 ### 步骤三：开启程序
 
-进入解压的文件夹：`Mining-Bot-Beta`。
+进入解压的文件夹：`Mining-Bot-Beta-2.1.0`。
 
-执行命令：`cd Mining-Bot-Beta`
+执行命令：`cd Mining-Bot-Beta-2.1.0`
 
 查看文件：`ls`
 
-![ls-files-in-mining-bot-beta](assets/ls-files-in-mining-bot-beta.png)
+![ls-files-in-mining-bot-beta](assets/ls-files-in-mining-bot-beta-2.1.0.png)
 
 运行`yarn install`命令或者`npm install`命令，或者直接输入`yarn`命令，安装依赖包，并确保`Nodejs`版本大于14。
 
 安装完成后，出现`node_modules`文件夹。
 
-![yarn-node-modules](assets/yarn-node-modules.png)
+![yarn-node-modules](assets/yarn-node-modules-2.1.0.png)
 
 
 #### 1.启动Mining-Bot
@@ -425,7 +424,7 @@ unzip Mining-Bot_V2.0.0_mac.zip -d Mining-Bot-Beta/
 
 启动成功显示信息如下：
 
-![yarn-start-node1234](assets/yarn-start-node1234.png)
+![yarn-start-node1234](assets/yarn-start-node1234-2.1.0.png)
 
 
 注意：如果使用的是服务器，需要根据自己服务器的`ip地址`来访问`Mining-Bot`。
@@ -441,12 +440,10 @@ unzip Mining-Bot_V2.0.0_mac.zip -d Mining-Bot-Beta/
 浏览器中输入：`http://localhost:8000/`，或者`http://your-ip:8000`，即可访问，如：`http://192.168.31.171:8000/`
 
 
-
 ![Mining-Bot-Index](assets/Mining-Bot-Index.png)
 
 
-
-当你第一次登陆的时候，会提示让您输入**锁定密码**，该密码主要用于**登陆认证**、**私钥加密保护**，这里的锁定密码和之前的yarn start node1234认证密码没有关系，没有必要保持一致。
+当你第一次登陆的时候，会提示让您输入**锁定密码**，该密码主要用于**登陆认证**、**私钥加密保护**，这里的锁定密码和之前的`yarn start node1234`认证密码没有关系，**没有必要保持一致**。
 
 至此，程序安装成功，后面步骤将会在浏览器页面操作，请参考[用户手册](../Use-Mining-Bot-For-Mining/User-Guide-of-Mining-Bot-Beta-CN.md).
 
