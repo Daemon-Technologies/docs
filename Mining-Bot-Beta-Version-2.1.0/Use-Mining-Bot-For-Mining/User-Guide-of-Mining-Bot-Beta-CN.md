@@ -171,17 +171,22 @@ npx @stacks/cli make_keychain -t
 
 ![chain-info](assets/CN/client/chain-info-null-2.1.0.png)
 
-需要注意：
+需要配置字段有：
 
-- Mining-Monitor Url: `http://47.242.239.96:8889/`，
-- BTC Node Peer Host`: `47.242.239.96 `
-- BTC Node Username: `daemontech2`
-- BTC Node Password: `daemontech2`
-- BTC Node RPC Port: `8332`
-- BTC Node Peer Port: `8333`
+- Mining-Monitor Url
+- BTC Node Peer Host
+- BTC Node Username
+- BTC Node Password
+- BTC Node RPC Port
+- BTC Node Peer Port
 
+如下为配置示例：
 
-![sys-conf](assets/CN/systemconfig/sysconf-2.1.0.png)
+![sys-conf](assets/CN/systemconfig/sysconf-2.1.0-red.png)
+
+其中圈出的字段需要用户自己提供。
+
+**注意：地灵科技并不提供主网比特币节点**。
 
 保存完成后，回到Mining Client界面，刷新可以看到链的信息更新。
 
@@ -202,18 +207,22 @@ npx @stacks/cli make_keychain -t
 
 点击开始挖矿按钮，弹出参数配置页面，选择已经导入的账户，调节燃烧费率，并选择节点信息，在主网这里，采用的是系统配置时的本地节点信息。
 
-![account-gas](assets/CN/client/config-gas-2.1.0.png)
-![burn-fee](assets/CN/client/gas-satoshi-2.1.0.png)
-![btc-node](assets/CN/client/btc-node-2.1.0.png)
+<img src="assets/CN/client/config-gas-2.1.0.png" alt="account-gas" style="zoom:33%;align=right"/>
+
+<img src="assets/CN/client/gas-satoshi-2.1.0.png" alt="burn-fee" style="zoom:33%;align=center;" align=center />
+
+其中比特币节点信息需要用户自己提供。
+
+<img src="assets/CN/client/btc-node-2.1.0-red.png" alt="btc-node" style="zoom:33%;" />
 
 
 #### 5.1.6 开始挖矿
 
 配置完成后，输入`node1234`，这是在`yarn start`时配置的认证密码，然后即可开启挖矿程序。 
 
-![auth-code](assets/CN/client/auth-code-2.1.0.png)
+<img src="assets/CN/client/auth-code-2.1.0.png" alt="auth-code" style="zoom: 50%;" />
 
-![mining-status](assets/CN/client/mining-status-2.1.0.png)
+<img src="assets/CN/client/mining-status-2.1.0.png#pic_center" alt="mining-status" style="zoom:50%;" />
 
 
 在命令行查看主网节点信息同步：
@@ -248,6 +257,10 @@ npx @stacks/cli make_keychain -t
 
 访问：`http://8.210.73.117:8000`，
 
+
+![node-pool-info](assets/CN/client/xenon-BTC-node-pool-2.1.0.jpeg)
+
+
 ![import-address-in-node-pool](assets/CN/client/node-pool-import-address-2.1.0.png)
 
 完成后回到挖矿界面，点击挖矿配置挖矿参数。
@@ -258,17 +271,17 @@ npx @stacks/cli make_keychain -t
 
 点击开始挖矿按钮，弹出参数配置页面，选择已经导入的账户，调节燃烧费率，并选择节点信息，在Xenon测试网这里，下拉选择节点池提供的节点信息。
 
-![account-select](assets/CN/client/account-select-2.1.0.png)
-![burn-fee](assets/CN/client/xenon-burn-fee-2.1.0.png)
-![btc-node-pool](assets/CN/client/xenon-node-pool-2.1.0.png)
+<img src="assets/CN/client/account-select-2.1.0.png" alt="account-select" style="zoom:33%;" />
+<img src="assets/CN/client/xenon-burn-fee-2.1.0.png" alt="burn-fee" style="zoom:33%;" />
+<img src="assets/CN/client/xenon-node-pool-2.1.0.png" alt="btc-node-pool" style="zoom:33%;" />
 
 #### 5.2.6 开始挖矿
 
 配置完成后，输入`node1234`，这是在`yarn start`时配置的认证密码，然后即可开启挖矿程序。 
 
-![auth-code](assets/CN/client/auth-code-2.1.0.png)
+<img src="assets/CN/client/auth-code-2.1.0.png" alt="auth-code" style="zoom:50%;" />
 
-![mining-status](assets/CN/client/xenon-mining-status-2.1.0.png)
+<img src="assets/CN/client/xenon-mining-status-2.1.0.png" alt="mining-status" style="zoom:50%;" />
 
 在命令行查看输出：
 

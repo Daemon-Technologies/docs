@@ -10,7 +10,7 @@ This tutorial will introduce how to use mining bot for STX mining.
 
 :artificial_satellite:**[Reminder] Please refer to the video for specific instructions.**
 
-- [Stacks Mining Bot Client version 2.0.0](https://youtu.be/3VZR9TPbYsE)
+- [Stacks Mining Bot Client version 2.1.0](https://youtu.be/3VZR9TPbYsE)
 
 ## 1. Login Page Introduction
 
@@ -39,8 +39,6 @@ The main page consists of four parts: the **Public Data** page, the **Wallet** p
 As shown in the figure below, the public data page is designed to provide rich data sources for mining bot strategies, and the public data page is shown in the figure below. At this stage, the following information is included:
 
 - Currency price information: STX, BTC trading pair information
-- Miner information
-- Mining information
 - Chain information
 - Block information
 
@@ -114,67 +112,6 @@ Enter the client page and see that the current state is Mining-Local Server is r
 
  
 
-### 3.1 Download stacks-node
-
-Click the download `stacks-node` button and wait for the download.
-
-![downloading-stacks-node_en](assets/EN/client/downloading-stacks-node_en.png)
-
-
-
-After the download is complete, the status changes to meet the mining conditions:
-
-![finish-downloading_en](assets/EN/client/finish-downloading_en.png)
-
-
-
-### 3.2 Start Mining:
-
-Account Selection:
-
-![start-mining-en](assets/EN/client/start-mining-en.png)
-
-
-
-Burn fee setting and whether to open Debug mode:
-
-![burn-fee-set-up_en](assets/EN/client/burn-fee-set-up_en.png)
-
-
-
-Open Debug mode, you can see more output information on the command line interface after mining starts.
-
-Configure the BTC node information to be synchronized:
-
-![node-set-up_en](assets/EN/client/node-set-up_en.png)
-
-
-
-After clicking **Finish**, the authorization password window will pop up:
-
-![auth-code_en](assets/EN/client/auth-code_en.png)
-
-
-
-In this example, input: `node1234`, after clicking the **Authentication**, wait a certain time for the interface to automatically jump, and then you can enter the mining.
-
-
-
-Check mining status：
-
-![mining_en](assets/EN/client/mining_en.png)
-
-
-
-The launch is successful, you can see that the status interface shows your mining address
-
-Server Side Information：
-
-![mining-server-info_cn](assets/CN/client/mining-server-info_cn.png)
-
-
-
-Server side is running.
 
 
 
@@ -206,6 +143,145 @@ After clicking confirm, it will return to the Set Your Lock Password interface:
 
 ![index-set-lock_en](assets/EN/index/index-set-lock_en.png)
 
-The above is all the operations.
+
+
+## 5. Practical Mining Guide
+
+在开启挖矿机器人后，通过访问`http://localhost:8000/`登录后，首先需要清除浏览器缓存。在本教程中，将逐步讲解主网和测试网Xenon上的操作，其中主网上会采用自己的比特币节点，而Xenon上则使用节点池。具体细节会在下面两个小节分别展开。
+
+After start the mining bot, after logging in by visiting `http://localhost:8000/`, you first need to clear the browser cache. In this tutorial, I will explain step by step the operations on the mainnet and testnet Xenon. The mainnet will use its own Bitcoin node, while Xenon will use the node pool. The specific details will be expanded separately in the following two subsections.
+
+
+### 5.1 主网挖矿步骤
+
+#### 5.1.1 清除浏览器缓存
+
+在主页面右键`检查`，点击`Application->Local Storage->http://localhost:8000/`，右键清除当前网页缓存。
+
+![clear-cache](assets/CN/client/clear-cache-2.1.0.png)
+
+![clear-cache](assets/CN/publicdata/clear-cache-2.1.0.png)
+
+完成后锁定账户并重新输入密码登录。
+
+#### 5.1.2 添加主网钱包地址
+
+切换网络为`Mainnet`，在钱包页面点击添加地址：
+
+![import-address](assets/CN/wallet/import-address-2.1.0.png)
+
+这里导入的比特币地址需要存入一定的比特币，否则无法执行挖矿步骤。
+
+### 5.1.3 系统配置与链信息查询
+
+在初始时未正确配置节点信息，无法获取到链相关的实际信息，因此需要先到系统配置界面将节点信息等配置完成。
+
+![chain-info](assets/CN/client/chain-info-null-2.1.0.png)
+
+需要注意：
+
+- Mining-Monitor Url: `http://47.242.239.96:8889/`，
+- BTC Node Peer Host`: `47.242.239.96 `
+- BTC Node Username: `daemontech2`
+- BTC Node Password: `daemontech2`
+- BTC Node RPC Port: `8332`
+- BTC Node Peer Port: `8333`
+
+
+![sys-conf](assets/CN/systemconfig/sysconf-2.1.0.png)
+
+保存完成后，回到Mining Client界面，刷新可以看到链的信息更新。
+
+![chain-info](assets/CN/client/chain-info-2.1.0.png)
+
+#### 5.1.4 下载stacks-node
+
+在Mining Client界面点击下载stacks-node:
+
+![stacks-node](assets/CN/client/download-stacks-node-2.1.0.png)
+
+完成后进入下一步挖矿参数配置操作。
+
+#### 5.1.5 配置挖矿参数
+
+![start-mining](assets/CN/client/start-mining-2.1.0.png)
+
+
+点击开始挖矿按钮，弹出参数配置页面，选择已经导入的账户，调节燃烧费率，并选择节点信息，在主网这里，采用的是系统配置时的本地节点信息。
+
+![account-gas](assets/CN/client/config-gas-2.1.0.png)
+![burn-fee](assets/CN/client/gas-satoshi-2.1.0.png)
+![btc-node](assets/CN/client/btc-node-2.1.0.png)
+
+
+#### 5.1.6 开始挖矿
+
+配置完成后，输入`node1234`，这是在`yarn start`时配置的认证密码，然后即可开启挖矿程序。 
+
+![auth-code](assets/CN/client/auth-code-2.1.0.png)
+
+![mining-status](assets/CN/client/mining-status-2.1.0.png)
+
+
+在命令行查看主网节点信息同步：
+
+![sync-block](assets/CN/client/cli-mainnet-2.1.0.png)
+
+同步完成后即开始挖矿。
+
+### 5.2 Xenon测试网挖矿步骤
+
+测试网上采用节点池的配置进行挖矿操作。
+
+#### 5.2.1 切换至Xenon测试网
+
+![xenon](assets/CN/publicdata/xenon-2.1.0.png)
+
+
+#### 5.2.2 导入测试网钱包账号
+
+![import-address](assets/CN/wallet/import-address-2.1.0.png)
+
+输入助记词即可。
+
+#### 5.2.3 下载stacks-node
+
+在Mining Client界面点击下载stacks-node:
+
+![stacks-node](assets/CN/client/xenon-download-stacks-node-2.1.0.png)
+
+
+#### 5.2.4 在节点池导入钱包地址
+
+访问：`http://8.210.73.117:8000`，
+
+![import-address-in-node-pool](assets/CN/client/node-pool-import-address-2.1.0.png)
+
+完成后回到挖矿界面，点击挖矿配置挖矿参数。
+
+#### 5.2.5 配置挖矿参数
+
+![start-mining](assets/CN/client/start-mining-2.1.0.png)
+
+点击开始挖矿按钮，弹出参数配置页面，选择已经导入的账户，调节燃烧费率，并选择节点信息，在Xenon测试网这里，下拉选择节点池提供的节点信息。
+
+![account-select](assets/CN/client/account-select-2.1.0.png)
+![burn-fee](assets/CN/client/xenon-burn-fee-2.1.0.png)
+![btc-node-pool](assets/CN/client/xenon-node-pool-2.1.0.png)
+
+#### 5.2.6 开始挖矿
+
+配置完成后，输入`node1234`，这是在`yarn start`时配置的认证密码，然后即可开启挖矿程序。 
+
+![auth-code](assets/CN/client/auth-code-2.1.0.png)
+
+![mining-status](assets/CN/client/xenon-mining-status-2.1.0.png)
+
+在命令行查看输出：
+
+![sync-block](assets/CN/client/cli-xenon-2.1.0.png)
+
+输出中可以看到`UTXOs found`，表示挖矿节点启动成功，开始挖矿。
+
 
 
