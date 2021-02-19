@@ -269,10 +269,17 @@ npx @stacks/cli make_keychain -t
 
 ![start-mining](assets/CN/client/start-mining-2.1.0.png)
 
-点击开始挖矿按钮，弹出参数配置页面，选择已经导入的账户，调节燃烧费率，并选择节点信息，在Xenon测试网这里，下拉选择节点池提供的节点信息。
+点击开始挖矿按钮，弹出参数配置页面。
 
+选择已经导入的账户：
 <img src="assets/CN/client/account-select-2.1.0.png" alt="account-select" style="zoom:33%;" />
+
+调节燃烧费率：
+
 <img src="assets/CN/client/xenon-burn-fee-2.1.0.png" alt="burn-fee" style="zoom:33%;" />
+
+并选择节点信息，在Xenon测试网这里，下拉选择节点池提供的节点信息：
+
 <img src="assets/CN/client/xenon-node-pool-2.1.0.png" alt="btc-node-pool" style="zoom:33%;" />
 
 #### 5.2.6 开始挖矿
