@@ -7,7 +7,10 @@ sort: 2
 本文的目标：演示如何运行Mining Bot Beta版本。
 
 **【提醒】如果想获取更全面的信息，请查看我们的视频教程。**
-- [Stacks挖矿机器人客户端2.0版](https://www.bilibili.com/video/BV18z4y167ss)
+- [Stacks挖矿机器人客户端2.1.0-Mainnet版](https://www.bilibili.com/video/BV1zb4y1R7F9/)
+
+- [Stacks挖矿机器人客户端2.1.0-Xenon版](https://www.bilibili.com/video/BV1hv411Y7pr/)
+
 
 ## 环境要求：
 

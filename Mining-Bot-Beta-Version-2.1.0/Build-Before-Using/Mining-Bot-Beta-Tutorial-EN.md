@@ -7,7 +7,7 @@ sort: 1
 The goal of this article: Demonstrate how to run Mining Bot Beta version.
 
 **【Tips】 If you want to get more comprehensive information, please see our tutorial video.**
-- [Stacks Mining Bot Client version 2.0.0](https://www.youtube.com/watch?v=3VZR9TPbYsE)
+- [Stacks Mining Bot Client version 2.1.0-Mainnet](https://www.youtube.com/watch?v=3VZR9TPbYsE)
 
 ## Requirements:
 
