@@ -1,8 +1,8 @@
 ---
-sort: 2
+sort: 1
 ---
 
-# Mining Bot V2.0.0 Beta
+# Mining Bot V2.1.0 Beta
 
 ## Official Channels and Repository
 

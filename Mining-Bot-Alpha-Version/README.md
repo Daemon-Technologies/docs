@@ -1,5 +1,5 @@
 ---
-sort: 2
+sort: 3
 ---
 
 # Mining Bot V1.0.0 Alpha
