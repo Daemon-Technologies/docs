@@ -362,7 +362,7 @@ cd stacks-mining
 
 访问链接 ：[Mining-Bot Releases](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/2.1.0)
 
-进入到Mining-Bot Beta 2.0.0 Release界面：
+进入到Mining-Bot Beta 2.1.0 Release界面：
 
 
 ![Mining-Bot-Release-Page](assets/Mining-Bot-Release-Page-2.1.0.png)

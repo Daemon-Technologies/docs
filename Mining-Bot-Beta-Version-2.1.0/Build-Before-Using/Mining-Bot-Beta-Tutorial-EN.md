@@ -343,7 +343,7 @@ On Desktop(or any other location you like) make a new directory, name it as `sta
 
 Go to: [Mining-Bot Releases](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/2.1.0)
 
-Now you can see Mining-Bot Beta 2.0.0 Release page：
+Now you can see Mining-Bot Beta 2.1.0 Release page：
 
 ![Mining-Bot-Release-Page](assets/Mining-Bot-Release-Page-2.1.0.png)
 

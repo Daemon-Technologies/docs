@@ -8,16 +8,17 @@ sort: 2
 
 - [前序环境搭建教程](../Build-Before-Using/Mining-Bot-Beta-Tutorial-CN.md)
 
-**【提醒】具体的使用说明大家可以参照视频。**
+**【提醒】如果想获取更全面的信息，请查看我们的视频教程。**
+- [Stacks挖矿机器人客户端2.1.0-Mainnet版](https://www.bilibili.com/video/BV1zb4y1R7F9/)
 
-- [Stacks挖矿机器人客户端2.0版](https://www.bilibili.com/video/BV18z4y167ss/)
+- [Stacks挖矿机器人客户端2.1.0-Xenon版](https://www.bilibili.com/video/BV1hv411Y7pr/)
+
 
 ## 1. 登陆页面介绍
 
 当你在浏览器中输入 **http://localhost:8000/** 的时候，会看到如下界面：
 
 ![index-set-lock](assets/CN/index/index-set-lock.png)
-
 
 
 当你第一次登陆的时候，会提示让您输入**锁定密码**，该密码主要用于**登陆认证**、**私钥加密保护**，这里的锁定密码和之前的yarn start node1234认证密码没有关系，没有必要保持一致。
