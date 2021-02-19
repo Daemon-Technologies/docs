@@ -207,9 +207,9 @@ npx @stacks/cli make_keychain -t
 
 点击开始挖矿按钮，弹出参数配置页面，选择已经导入的账户，调节燃烧费率，并选择节点信息，在主网这里，采用的是系统配置时的本地节点信息。
 
-<img src="assets/CN/client/config-gas-2.1.0.png" alt="account-gas" style="zoom:33%;align=right"/>
+<img src="assets/CN/client/config-gas-2.1.0.png" alt="account-gas" style="zoom:33%;"/>
 
-<img src="assets/CN/client/gas-satoshi-2.1.0.png" alt="burn-fee" style="zoom:33%;align=center;" align=center />
+<img src="assets/CN/client/gas-satoshi-2.1.0.png" alt="burn-fee" style="zoom:33%;" />
 
 其中比特币节点信息需要用户自己提供。
 
@@ -272,6 +272,7 @@ npx @stacks/cli make_keychain -t
 点击开始挖矿按钮，弹出参数配置页面。
 
 选择已经导入的账户：
+
 <img src="assets/CN/client/account-select-2.1.0.png" alt="account-select" style="zoom:33%;" />
 
 调节燃烧费率：
