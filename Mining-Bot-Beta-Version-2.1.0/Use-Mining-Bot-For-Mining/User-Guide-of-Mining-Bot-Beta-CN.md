@@ -40,18 +40,13 @@ sort: 2
 如下图所示，公开数据页面旨在为挖矿机器人策略提供丰富的数据来源，公开数据页面如上图所示。现阶段包含如下信息：
 - 币价信息：STX、BTC交易对信息
 
-- 矿工信息
-
-- 挖矿信息
-
 - 链信息
 
 - 区块信息
 
-![public-data](assets/CN/publicdata/public-data.png)
+![public-data](assets/CN/publicdata/public-data-2.1.0.png)
 
 ​    
-
 ## 2. 钱包页面
 
 ### 2.1 比特币与Stacks地址在线生成
@@ -110,69 +105,9 @@ npx @stacks/cli make_keychain -t
 
 ## 3. 客户端界面
 
-进入客户端 页面，看到当前状态为Mining-Local Server已运行，但是`stacks-node`程序未找到。
+进入客户端页面，看到当前状态为Mining-Local Server已运行，但是`stacks-node`程序未找到。
 
 ![current_state_mining_cn](assets/CN/client/current_state_mining_cn.png)
-
- 
-
-### 3.1 下载stacks-node
-
-点击`下载stacks-node`按钮等待下载。
-
-![downloading-stacks-node_cn](assets/CN/client/downloading-stacks-node_cn.png)
-
-
-
-下载完成后，状态发生变化，满足挖矿条件：
-
-![finish-downloading_cn](assets/CN/client/finish-downloading_cn.png)
-
-
-
-### 3.2 开始挖矿
-
-账户选择：
-
-![start-mining-cn](assets/CN/client/start-mining_cn.png)
-
-
-
-燃烧量设置与是否开启Debug模式：
-
-![burn-fee-set-up_cn](assets/CN/client/burn-fee-set-up_cn.png)
-
-
-
-开启Debug模式，可以在挖矿开始后命令行界面看到更多输出信息。
-
-
-
-配置要同步的BTC节点信息：
-
-![node-set-up_cn](assets/CN/client/node-set-up_cn.png)
-
-
-
-点击完成后，弹出授权密码窗口：
-
-![authCode_cn](assets/CN/client/authCode_cn.png)
-
-本例中，输入：`node1234`，点击授权后，等待一定的时间界面自动跳转，即可进入挖矿。
-
-检查挖矿状态：
-
-![mining_cn](assets/CN/client/mining_cn.png)
-
-启动成功，可以看到状态界面显示出了自己的挖矿地址。
-
-服务端信息：
-
-![mining-server-info_cn](assets/CN/client/mining-server-info_cn.png)
-
-
-
-服务端正在运行中。
 
 
 
@@ -200,9 +135,148 @@ npx @stacks/cli make_keychain -t
 
 
 
-点击确认 后，会回到界面：
+点击确认后，会回到界面：
 
 ![index-set-lock](assets/CN/index/index-set-lock.png)
 
-以上就是所有的操作。
+
+## 5.挖矿实际操作指南
+
+在开启挖矿机器人后，通过访问`http://localhost:8000/`登录后，首先需要清除浏览器缓存。在本教程中，将逐步讲解主网和测试网Xenon上的操作，其中主网上会采用自己的比特币节点，而Xenon上则使用节点池。具体细节会在下面两个小节分别展开。
+
+
+### 5.1 主网挖矿步骤
+
+#### 5.1.1 清除浏览器缓存
+
+在主页面右键`检查`，点击`Application->Local Storage->http://localhost:8000/`，右键清除当前网页缓存。
+
+![clear-cache](assets/CN/client/clear-cache-2.1.0.png)
+
+![clear-cache](assets/CN/publicdata/clear-cache-2.1.0.png)
+
+完成后锁定账户并重新输入密码登录。
+
+#### 5.1.2 添加主网钱包地址
+
+切换网络为`Mainnet`，在钱包页面点击添加地址：
+
+![import-address](assets/CN/wallet/import-address-2.1.0.png)
+
+这里导入的比特币地址需要存入一定的比特币，否则无法执行挖矿步骤。
+
+### 5.1.3 系统配置与链信息查询
+
+在初始时未正确配置节点信息，无法获取到链相关的实际信息，因此需要先到系统配置界面将节点信息等配置完成。
+
+![chain-info](assets/CN/client/chain-info-null-2.1.0.png)
+
+需要注意：
+
+- Mining-Monitor Url: `http://47.242.239.96:8889/`，
+- BTC Node Peer Host`: `47.242.239.96 `
+- BTC Node Username: `daemontech2`
+- BTC Node Password: `daemontech2`
+- BTC Node RPC Port: `8332`
+- BTC Node Peer Port: `8333`
+
+
+![sys-conf](assets/CN/systemconfig/sysconf-2.1.0.png)
+
+保存完成后，回到Mining Client界面，刷新可以看到链的信息更新。
+
+![chain-info](assets/CN/client/chain-info-2.1.0.png)
+
+#### 5.1.4 下载stacks-node
+
+在Mining Client界面点击下载stacks-node:
+
+![stacks-node](assets/CN/client/download-stacks-node-2.1.0.png)
+
+完成后进入下一步挖矿参数配置操作。
+
+#### 5.1.5 配置挖矿参数
+
+![start-mining](assets/CN/client/start-mining-2.1.0.png)
+
+
+点击开始挖矿按钮，弹出参数配置页面，选择已经导入的账户，调节燃烧费率，并选择节点信息，在主网这里，采用的是系统配置时的本地节点信息。
+
+![account-gas](assets/CN/client/config-gas-2.1.0.png)
+![burn-fee](assets/CN/client/gas-satoshi-2.1.0.png)
+![btc-node](assets/CN/client/btc-node-2.1.0.png)
+
+
+#### 5.1.6 开始挖矿
+
+配置完成后，输入`node1234`，这是在`yarn start`时配置的认证密码，然后即可开启挖矿程序。 
+
+![auth-code](assets/CN/client/auth-code-2.1.0.png)
+
+![mining-status](assets/CN/client/mining-status-2.1.0.png)
+
+
+在命令行查看主网节点信息同步：
+
+![sync-block](assets/CN/client/cli-mainnet-2.1.0.png)
+
+同步完成后即开始挖矿。
+
+### 5.2 Xenon测试网挖矿步骤
+
+测试网上采用节点池的配置进行挖矿操作。
+
+#### 5.2.1 切换至Xenon测试网
+
+![xenon](assets/CN/publicdata/xenon-2.1.0.png)
+
+
+#### 5.2.2 导入测试网钱包账号
+
+![import-address](assets/CN/wallet/import-address-2.1.0.png)
+
+输入助记词即可。
+
+#### 5.2.3 下载stacks-node
+
+在Mining Client界面点击下载stacks-node:
+
+![stacks-node](assets/CN/client/xenon-download-stacks-node-2.1.0.png)
+
+
+#### 5.2.4 在节点池导入钱包地址
+
+访问：`http://8.210.73.117:8000`，
+
+![import-address-in-node-pool](assets/CN/client/node-pool-import-address-2.1.0.png)
+
+完成后回到挖矿界面，点击挖矿配置挖矿参数。
+
+#### 5.2.5 配置挖矿参数
+
+![start-mining](assets/CN/client/start-mining-2.1.0.png)
+
+点击开始挖矿按钮，弹出参数配置页面，选择已经导入的账户，调节燃烧费率，并选择节点信息，在Xenon测试网这里，下拉选择节点池提供的节点信息。
+
+![account-select](assets/CN/client/account-select-2.1.0.png)
+![burn-fee](assets/CN/client/xenon-burn-fee-2.1.0.png)
+![btc-node-pool](assets/CN/client/xenon-node-pool-2.1.0.png)
+
+#### 5.2.6 开始挖矿
+
+配置完成后，输入`node1234`，这是在`yarn start`时配置的认证密码，然后即可开启挖矿程序。 
+
+![auth-code](assets/CN/client/auth-code-2.1.0.png)
+
+![mining-status](assets/CN/client/xenon-mining-status-2.1.0.png)
+
+在命令行查看输出：
+
+![sync-block](assets/CN/client/cli-xenon-2.1.0.png)
+
+输出中可以看到`UTXOs found`，表示挖矿节点启动成功，开始挖矿。
+
+
+
+
 
