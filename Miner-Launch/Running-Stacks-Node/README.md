@@ -1,7 +1,9 @@
 ---
 sort: 1
 ---
-# Create Miner Key
+# Setup Stacks Node
+
+## Create Miner Key
 **【Tips】 In this chapter, I will use the [official tutorial](https://docs.stacks.co/start-mining/mainnet) which using npx to generate stacks and bitcoin key pairs. This key pair is generated in localhost, you should record the mnemonic and key info carefully before close the command terminal.**
 
 Refer to [official tutorial](https://docs.stacks.co/start-mining/mainnet): Running a miner
@@ -29,7 +31,7 @@ npx @stacks/cli make_keychain 2>/dev/null | json_pp > keychain.txt
 > **Don't lose this information** - we'll need to use the privateKey field later on.The above BTC address will then need to be **imported into the BTC network**.
 
 
-# Import BTC Address
+## Import BTC Address
 
 For querying miner's UTXOs in bitcoin node fastly, miner should import your own BTC address in the Bitcoin node you setup above.
 
@@ -38,7 +40,7 @@ bitcoin-cli -conf=/root/bitcoin-config-mainnet.conf importaddress <btcAddress fr
 ```
 
 
-# Setup Stacks Node
+## Setup Stacks Node
 
 **【Tips】 In this chapter, I will not use the [official tutorial](https://docs.stacks.co/understand-stacks/running-mainnet-node) which using docker, because from my experience Miner will change the config file frequently, launching docker is not a friendly option to me.**
 
