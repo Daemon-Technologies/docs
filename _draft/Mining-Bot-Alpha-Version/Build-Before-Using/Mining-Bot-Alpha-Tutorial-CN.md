@@ -8,6 +8,12 @@ sort: 2
 
 **【提醒】如果你不是第一次运行挖矿机器人，请查阅[重启Mining-Bot](#重启Mining-Bot)。**
 
+**【提醒】建议全程保持科学上网。**
+
+**【提醒】如果想获取更全面的信息，请查看我们的视频教程。**
+- [Windows 教程](https://www.bilibili.com/video/BV1Lp4y167jd)
+- [MacOS 教程](https://www.bilibili.com/video/BV11X4y1u7sL)
+
 ## 介绍
 
 本教程会带你经历以下步骤：
@@ -15,7 +21,10 @@ sort: 2
 - 下载并安装Nodejs
 - 运行Mining-Bot
 
-:artificial_satellite:**【提示】如果你的操作系统是`Windows`系统，我们推荐你使用[WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)（推荐使用Ubuntu18系统）来安装并运行挖矿机器人。**
+:artificial_satellite:**【提示】如果你的操作系统是`Windows10`系统，你需要使用[WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)（推荐使用Ubuntu18系统）来安装并运行挖矿机器人。（Mining-Bot使用基于UNIX的指令与stacks-node进行交互，不支持Windows原生指令）**
+
+:artificial_satellite:**【提示】如果操作系统低于`Windows10`，我们将无法提供相应的支持**
+
 
 ## 环境安装与配置
 
@@ -146,18 +155,29 @@ yarn -v
 
 ## 运行Mining-Bot
 
-首先，浏览器打开[Mining-Bot Alpha Release](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/1.0.0)页面：
+我们针对不同系统的用户有不同的教程：
 
+### Mac用户
 
+首先，用浏览器打开[Mining-Bot Alpha Release](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/1.0.0)页面：
 
-首先打开一个新命令窗口并克隆Mining-Bot仓库：
+![releasePage.png](assets/releasePage.png)
+
+请**下载图片中红框内对应的文件并进行解压**：
+
+- mac用户：[Mining-Bot_V1.0.0_macos.zip](https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/Mining-Bot_V1.0.0_macos.zip)
+
+![mac_file](assets/mac_file.png)
+
+![unzip_mac](assets/unzip_mac.jpg)
+
+然后进入解压后的目录：
 
 ```shell
-git clone https://github.com/Daemon-Technologies/Mining-Bot.git
-cd Mining-Bot
+cd Mining-Bot_V1.0.0_macos
 ```
 
-安装依赖包，【注意】此处需要用`yarn`命令进行安装：
+然后安装依赖包，【注意】此处需要用`yarn`命令进行安装：
 
 ```shell
 yarn install
@@ -165,112 +185,135 @@ yarn install
 
 :warning:**此过程会花费一定的时间来完成。**
 
-运行Mining-Bot
+![yarn_install_mac](assets/yarn_install_mac.png)
+
+通过`yarn`命令运行Mining-Bot
 
 ```shell
-npm start
+yarn start
 ```
 
 如果你看到类似如下输出则代表Mining-Bot已成功启动：
 
 ```shell
-> ant-design-pro@5.0.0-alpha.0 start D:\Projects\Blockstack\Mining-Bot
-> umi dev
-
-� Starting Umi UI using umi@3.2.27...
-� Umi UI mini Ready on port 3000.
-Starting the development server...
-
-√ Webpack
-  Compiled successfully in 1.39m
-
- DONE  Compiled successfully in 83338ms                                                                9:41:13 ├F10: PM┤
-
-
-  App running at:
-  - Local:   http://localhost:8000 (copied to clipboard)
-  - Network: http://172.19.112.1:8000
+yarn run v1.22.4
+$ node server.js
+Local Server listening at http://localhost:5000
+Mining-Bot Client listening at http://localhost:8000
 ```
 
-然后你可以在浏览器打开http://localhost:8000 并会看到如下界面的话：
+![yarn_start_mac](assets/yarn_start_mac.png)
+
+### Linux或WSL用户
+
+**这里以WSL用户为例**（**区别就在于下载的文件**，linux用户需要下载的文件是`Mining-Bot_V1.0.0_linux.zip`）。
+
+首先，使用`wget`命令进行下载，如下：
+
+```shell
+wget https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/Mining-Bot_V1.0.0_wsl.zip
+```
+
+![wget](assets/wget.png)
+
+然后使用`unzip`命令进行解压：
+
+```shell
+unzip Mining-Bot_V1.0.0_wsl.zip -d Mining-Bot-Alpha
+```
+
+![unzip](assets/unzip.png)
+
+然后进入解压后的目录：
+
+```shell
+cd Mining-Bot-Alpha
+```
+
+然后安装依赖包，【注意】此处需要用`yarn`命令进行安装：
+
+```shell
+yarn install
+```
+
+:warning:**此过程会花费一定的时间来完成。**
+
+![yarn](assets/yarn.png)
+
+通过`yarn`命令运行Mining-Bot
+
+```shell
+yarn start
+```
+
+如果你看到类似如下输出则代表Mining-Bot已成功启动：
+
+```shell
+yarn run v1.22.4
+$ node server.js
+Local Server listening at http://localhost:5000
+Mining-Bot Client listening at http://localhost:8000
+```
+
+如果你是WSL用户你将会看到类似如下的输出（`ip`地址而非`localhost`）：
+
+```shell
+yarn run v1.22.4
+$ node server.js
+Local Server listening at http://172.23.215.133:5000
+Mining-Bot Client listening at http://172.23.215.133:8000
+```
+
+然后你可以在浏览器打开http://localhost:8000并会看到如下界面的话：
+
+**【提示】WSL用户需要使用启动时给定的IP地址和端口（如上面是`http://172.23.215.133:8000`）在浏览器中打开。**
 
 ![image-20201112221844632](assets/Homepage-CN.png)
-
-:artificial_satellite:**【提醒】如果你使用的系统是Windows并且使用了[Windows WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)，你需要使用输出中提示的Network地址来打开网站，比如下方的http://172.30.240.213:8000**
-
-![wsl](assets/wsl_mining_ip.png)
 
 
 恭喜你！你已经完成了Mining-Bot的启动，接下来可以开启你的挖矿之旅了。
 
 ## 重启Mining-Bot
 
-如果你已经成功运行Mining-Bot并且已经停掉了所有相关程序。现在我们将教你如何再次运行Mining-Bot。如果你是Windows用户，请使用[WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)来进行如下操作。确保你已经停掉了挖矿程序（你可以使用`Ctrl+C`来停止这些程序）。
+如果你已经成功运行Mining-Bot并且已经停掉了所有相关程序。现在我们将教你如何再次运行Mining-Bot。如果你是Windows用户，请使用[WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)（推荐使用Ubuntu18系统）来进行如下操作。确保你已经停掉了挖矿程序（你可以使用`Ctrl+C`来停止这些程序）。
 
 **【提醒】确保你已经成功完成上述教程并成功运行程序，并关闭了所有上述已启动的程序。**
 
-### 运行Mining-Local-Server
-
-打开一个新窗口然后进入`Mining-Local-Server`目录：
-
-```shell
-cd Mining-Local-Server
-```
-
-启动Mining-Local-Server：
-
-```shell
-npm start
-```
-
-如果你看到类似如下输出则代表已成功启动：
-
-```shell
-> miningbot-server@1.0.0 start /home/sher/stacks-mining/Mining-Local-Server
-> node server.js
-
-Example app listening at http://localhost:5000
-```
-
 ### 运行Mining-Bot
 
-打开一个新窗口然后进入`Mining-Bot`目录：
+打开一个新窗口然后**进入你当时zip文件的解压目录**，此处以`Mining-Bot-Alpha`为例：
 
 ```shell
-cd Mining-Bot
+cd Mining-Bot-Alpha
 ```
 
-启动Mining-Bot：
+启动Mining-Bot-Alpha：
 
 ```shell
-npm start
+yarn start
 ```
 
 如果你看到类似如下输出则代表已成功启动：
 
 ```shell
-> ant-design-pro@5.0.0-alpha.0 start /home/sher/stacks-mining/Mining-Bot
-> umi dev
-
-🚀 Starting Umi UI using umi@3.2.27...
-🌈 Umi UI mini Ready on port 3000.
-Starting the development server...
-
-✔ Webpack
-  Compiled successfully in 27.20s
-
- DONE  Compiled successfully in 27199ms                                                                       5:28:01 PM
-
-
-  App running at:
-  - Local:   http://localhost:8000 (copied to clipboard)
-  - Network: http://172.31.214.44:8000
+yarn run v1.22.4
+$ node server.js
+Local Server listening at http://localhost:5000
+Mining-Bot Client listening at http://localhost:8000
 ```
 
-然后你可以在浏览器打开http://localhost:8000 并会看到如下界面的话：
+如果你是WSL用户你将会看到类似如下的输出（`ip`地址而非`localhost`）：
+
+```shell
+yarn run v1.22.4
+$ node server.js
+Local Server listening at http://172.23.215.133:5000
+Mining-Bot Client listening at http://172.23.215.133:8000
+```
+
+然后你可以在浏览器打开http://localhost:8000并会看到如下界面的话：
+
+**【提示】WSL用户需要使用启动时给定的IP地址和端口（如上面是`http://172.23.215.133:8000`）在浏览器中打开。**
 
 ![image-20201112221844632](assets/Homepage-CN.png)
 
-:artificial_satellite:**【提醒】如果你使用的系统是Windows并且使用了[Windows WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)，你需要使用输出中提示的Network地址来打开网站，比如下方的http://172.30.240.213:8000**
-
-![wsl](assets/wsl_mining_ip.png)
