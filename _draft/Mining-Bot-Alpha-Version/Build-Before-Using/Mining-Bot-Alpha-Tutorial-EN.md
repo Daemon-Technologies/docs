@@ -8,49 +8,23 @@ Learn how to set up and run mining bot.
 
 **【Tips】If you are not the first time to start mining-bot, please see [Restart Mining-Bot](#Restart Mining-Bot)**.
 
+**【Tips】 If you want to get more comprehensive information, please see our tutorial video.**
+- [Windows tutorial](https://www.youtube.com/watch?v=FXifFx0Akzc)
+- [MacOS tutorial](https://www.youtube.com/watch?v=TCtCTttsSeI)
+
+
 ## Introduction
 
 This tutorial will walk you through the following steps:
 
-- Download and install Rust and Nodejs
-- Install the stacks-node
-- Running Mining-Local-Server
+- Download and install Nodejs
 - Running Mining-Bot
 
-:artificial_satellite:**【Tips】If your system is `Windows`, we recommend that you can use [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to install Mining-Bot.**
+:artificial_satellite:**【Tips】If your system is `Windows`, you must use [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (Ubuntu18 is recommended)to install Mining-Bot. (Mining-Bot use UNIX based command to interact with stacks-node, so do not support Windows native environment)**
+
+:artificial_satellite:**【Tips】If your system is lower than `Windows10`, we cannot give corresponding support to you**
 
 ## Requirements
-
-### Rust
-
-The tutorial of installing Rust comes from [blockstack official document](https://docs.blockstack.org/understand-stacks/running-testnet-node). You can see it for more information.
-
-If you use Linux, you may need to manually install [`libssl-dev`](https://wiki.openssl.org/index.php/Libssl_API) and other packages. In your command line, run the following to get all packages:
-
-```shell
-sudo apt-get install build-essential cmake libssl-dev pkg-config
-```
-
-Ensure that you have Rust installed. If you are using macOS, Linux, or another Unix-like OS, run the following. If you are on a different OS, follow the [official Rust installation guide](https://www.rust-lang.org/tools/install).
-
-```shell
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-```
-
-In case you just installed Rust, you will be prompted to run the following command to make the `cargo` command available:
-
-```shell
-source $HOME/.cargo/env
-```
-
-Next, to check if Rust is installed correctly:
-
-```shell
-# use the command
-rustc -V
-# here is the output
-rustc 1.47.0 (18bf6b4f0 2020-10-07)
-```
 
 ### Nodejs
 
@@ -182,121 +156,33 @@ yarn -v
 1.22.4
 ```
 
-## Step 1: Installing the stacks-node
+## Running Mining-Bot
 
-The tutorial of installing stacks-node based on [blockstack official document](https://docs.blockstack.org/stacks-blockchain/running-testnet-node). You can see it for more information.
+We have different tutorials for users of different systems:
 
-First, clone this repository:
+### Mac User
 
-```shell
-git clone https://github.com/blockstack/stacks-blockchain.git
-cd stacks-blockchain
-```
+First, open the [Mining-Bot Alpha Release](https://github.com/Daemon-Technologies/Mining-Bot/releases/tag/1.0.0) page with a browser:
 
-Install the Stacks node by running:
+![releasePage.png](assets/releasePage.png)
 
-```shell
-cargo build --workspace --release --bin stacks-node
-# binary will be in target/release/stacks-node
-```
+Please download the corresponding file in the red box in the picture and decompress it:
 
-:warning:**This process will take a few minutes to complete.**
+- Mac users: [Mining-Bot_V1.0.0_macos.zip](https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/Mining-Bot_V1.0.0_macos.zip)
 
-Then copy the binary file `target/release/stacks-node` to `$HOME/.cargo/bin`:
+![mac_file](assets/mac_file.png)
 
-```shell
-cp target/release/stacks-node $HOME/.cargo/bin
-```
+![unzip_mac](assets/unzip_mac.jpg)
 
-To check if the `stacks-node` is global command right now:
+**【Tips】 Remember the unzipped directory, follow-up operations need to enter the directory. **
+
+Then get into the decompressed directory:
 
 ```shell
-# use the command
-stacks-node help
+cd Mining-Bot_V1.0.0_macos
 ```
 
-Here is the output:
-
-```shell
-stacks-node <SUBCOMMAND>
-Run a stacks-node.
-
-USAGE:
-stacks-node <SUBCOMMAND>
-
-SUBCOMMANDS:
-
-mocknet         Start a node based on a fast local setup emulating a burnchain. Ideal for smart contract development.
-
-helium          Start a node based on a local setup relying on a local instance of bitcoind.
-                The following bitcoin.conf is expected:
-                  chain=regtest
-                  disablewallet=0
-                  txindex=1
-                  server=1
-                  rpcuser=helium
-                  rpcpassword=helium
-
-argon           Start a node that will join and stream blocks from the public argon testnet, powered by Blockstack (Proof of Burn).
-
-krypton         Start a node that will join and stream blocks from the public krypton testnet, powered by Blockstack via (Proof of Transfer).
-
-xenon           Start a node that will join and stream blocks from the public xenon testnet, decentralized.
-
-start           Start a node with a config of your own. Can be used for joining a network, starting new chain, etc.
-                Arguments:
-                  --config: path of the config (such as https://github.com/blockstack/stacks-blockchain/blob/master/testnet/Stacks.toml).
-                Example:
-                  stacks-node start --config=/path/to/config.toml
-
-version         Display informations about the current version and our release cycle.
-
-help            Display this help.
-```
-
-## Step 2: Running Mining-Local-Server
-
-First, open a new terminal and clone the repository:
-
-```shell
-git clone https://github.com/Daemon-Technologies/Mining-Local-Server.git
-cd Mining-Local-Server
-```
-
-Install the dependencies:
-
-```shell
-npm install
-```
-
-Then running Mining-Local-Server:
-
-```shell
-npm start
-```
-
-If you see the output like the following, that means you start Mining-Local-Server successfully:
-
-```shell
-> miningbot-server@1.0.0 start D:\Projects\Blockstack\Mining-Local-Server
-> node server.js
-
-(node:4312) ExperimentalWarning: The ESM module loader is experimental.
-Example app listening at http://localhost:5000
-```
-
-See more information on [Mining-Local-Server](https://github.com/Daemon-Technologies/Mining-Local-Server).
-
-## Step 3: Running Mining-Bot
-
-First, open a new terminal and clone the repository:
-
-```shell
-git clone https://github.com/Daemon-Technologies/Mining-Bot.git
-cd Mining-Bot
-```
-
-Install the dependencies:
+Install the dependent package, 【Tips】Here you need to use the `yarn` command to install:
 
 ```shell
 yarn install
@@ -304,40 +190,90 @@ yarn install
 
 :warning:**This process will take a few minutes to complete.**
 
+![yarn_install_mac](assets/yarn_install_mac.png)
+
 Then running Mining-Bot:
 
 ```shell
-npm start
+yarn start
 ```
 
 If you see the output like the following, that means you start Mining-Bot successfully:
 
+```json
+yarn run v1.22.4
+$ node server.js
+Local Server listening at http://localhost:5000
+Mining-Bot Client listening at http://localhost:8000
+```
+
+![yarn_start_mac](assets/yarn_start_mac.png)
+
+### Linux or WSL User
+
+**Here I take WSL users as an example (The difference lies in the downloaded files**, the file that linux users need to download is `Mining-Bot_V1.0.0_linux.zip`).
+
+First, you can use the `wget` command to download, as follows:
+
 ```shell
-> ant-design-pro@5.0.0-alpha.0 start D:\Projects\Blockstack\Mining-Bot
-> umi dev
+wget https://github.com/Daemon-Technologies/Mining-Bot/releases/download/1.0.0/Mining-Bot_V1.0.0_wsl.zip
+```
 
-� Starting Umi UI using umi@3.2.27...
-� Umi UI mini Ready on port 3000.
-Starting the development server...
+![wget](assets/wget.png)
 
-√ Webpack
-  Compiled successfully in 1.39m
+Then use the `unzip` command to decompress:
 
- DONE  Compiled successfully in 83338ms                                                                9:41:13 ├F10: PM┤
+```shell
+unzip Mining-Bot_V1.0.0_wsl.zip -d Mining-Bot-Alpha
+```
 
+![unzip](assets/unzip.png)
 
-  App running at:
-  - Local:   http://localhost:8000 (copied to clipboard)
-  - Network: http://172.19.112.1:8000
+Then get into the decompressed directory:
+
+```shell
+cd Mining-Bot-Alpha
+```
+
+Install the dependent package, 【Tips】Here you need to use the `yarn` command to install:
+
+```shell
+yarn install
+```
+
+:warning:**This process will take a few minutes to complete.**
+
+![yarn](assets/yarn.png)
+
+Then running Mining-Bot:
+
+```shell
+yarn start
+```
+
+If you see the output like the following, that means you start Mining-Bot successfully:
+
+```json
+yarn run v1.22.4
+$ node server.js
+Local Server listening at http://localhost:5000
+Mining-Bot Client listening at http://localhost:8000
+```
+
+If you are a WSL user you will see output similar to the following (`ip address` instead of `localhost`):
+
+```json
+yarn run v1.22.4
+$ node server.js
+Local Server listening at http://172.23.215.133:5000
+Mining-Bot Client listening at http://172.23.215.133:8000
 ```
 
 Then you can open http://localhost:8000 and you will see the page:
 
+**【Tips】 WSL users need to use the IP address and port given at startup (such as `http://172.23.215.133:8000` above) to open in the browser. **
+
 ![image-20201112214323389](assets/Homepage.png)
-
-:artificial_satellite:**【Tips】If your system is [Windows WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10), You need to use Network ip to open the page, such as below which is http://172.30.240.213:8000**
-
-![wsl](assets/wsl_mining_ip.png)
 
 Congratulations! Now you can start your mining journey.
 
@@ -347,68 +283,36 @@ If you have successfully run Mining-Bot and have stopped all related programs. N
 
 **【Tips】Make sure you have successfully completed the above tutorial and stopped all programs mentioned above.**
 
-### Running Mining-Local-Server
-
-Open a new terminal and get into `Mining-Local-Server` directory:
-
-```shell
-cd Mining-Local-Server
-```
-
-Start Mining-Local-Server:
-
-```shell
-npm start
-```
-
-If you see the output like the following, that means you start Mining-Local-Server successfully:
-
-```shell
-> miningbot-server@1.0.0 start /home/sher/stacks-mining/Mining-Local-Server
-> node server.js
-
-Example app listening at http://localhost:5000
-```
-
 ### Running Mining-Bot
 
-Open a new terminal and get into `Mining-Bot` directory:
+Open a new terminal and **enter the unzipped directory of your zip file at that time**, start Mining-Bot-Alpha:
 
 ```shell
-cd Mining-Bot
-```
-
-Start Mining-Bot:
-
-```shell
-npm start
+yarn start
 ```
 
 If you see the output like the following, that means you start Mining-Bot successfully:
 
 ```shell
-> ant-design-pro@5.0.0-alpha.0 start /home/sher/stacks-mining/Mining-Bot
-> umi dev
+yarn run v1.22.4
+$ node server.js
+Local Server listening at http://localhost:5000
+Mining-Bot Client listening at http://localhost:8000
+```
 
-🚀 Starting Umi UI using umi@3.2.27...
-🌈 Umi UI mini Ready on port 3000.
-Starting the development server...
+If you are a WSL user you will see output similar to the following (`ip address` instead of `localhost`):
 
-✔ Webpack
-  Compiled successfully in 27.20s
-
- DONE  Compiled successfully in 27199ms                                                                       5:28:01 PM
-
-
-  App running at:
-  - Local:   http://localhost:8000 (copied to clipboard)
-  - Network: http://172.31.214.44:8000
+```json
+yarn run v1.22.4
+$ node server.js
+Local Server listening at http://172.23.215.133:5000
+Mining-Bot Client listening at http://172.23.215.133:8000
 ```
 
 Then you can open http://localhost:8000 and you will see the page:
 
+**【Tips】 WSL users need to use the IP address and port given at startup (such as `http://172.23.215.133:8000` above) to open in the browser. **
+
 ![image-20201112214323389](assets/Homepage.png)
 
-:artificial_satellite:**【Tips】If your system is [Windows WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10), You need to use Network ip to open the page, such as below which is http://172.30.240.213:8000**
 
-![wsl](assets/wsl_mining_ip.png)

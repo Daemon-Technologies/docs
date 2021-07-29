@@ -9,6 +9,10 @@ This documentation will introduce to you how to mine STX using Mining-Bot
 
 - [Pre-order tutorial](../Build-Before-Using/Mining-Bot-Alpha-Tutorial-EN.md)
 
+**【Tips】 Tutorial videos released, please refer to the video for specific instructions.**
+- [Windows tutorial](https://www.youtube.com/watch?v=FXifFx0Akzc)
+- [MacOS tutorial](https://www.youtube.com/watch?v=TCtCTttsSeI)
+
 ## Login Page Introduction
 
 When you input **http://localhost:8000/** in your browser, you will see the following interface:
@@ -28,7 +32,6 @@ After clicking **Lock Your Account**, it will jump to the following interface. Y
 
 The main page consists of three parts: **Public Data Page**, **Wallet Page**, and **Client Page**. Next, we will explain how to obtain mining data and participate in mining through Mining-Bot.
 
-主页面由三个部分组成：**公开数据页面**、**钱包页面**、与**客户端页面**。接下来将逐个页面讲解如何通过挖矿机器人获取挖矿数据并参与挖矿。
 
 ## Public Data Page
 
@@ -90,6 +93,9 @@ You can see the newly added address in the list, as well as its corresponding ty
 ![](assets/EN/wallet/importAddress3.png)
 
 ## Client Page
+
+**【Tips】This part differs a lot by version update, you can follow the video to learn. Documentation will be updated later**
+- [Recommended Video](https://www.youtube.com/watch?v=TCtCTttsSeI)
 
 When you enter the client interface, you will see two panels **Mining Operation Board** and **Mining Info**. If you enter the client for the first time, you will see the current status is displayed as **No Mining Program Running**
 
