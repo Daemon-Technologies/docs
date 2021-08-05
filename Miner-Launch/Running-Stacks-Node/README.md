@@ -30,12 +30,12 @@ npx @stacks/cli make_keychain 2>/dev/null | json_pp > keychain.txt
 }
 ```
 
-> **Don't lose this information** - we'll need to use the privateKey field later on.The above BTC address will then need to be **imported into the BTC network**.
+> **Don't lose this information** - we'll need to use the privateKey field later on. The above BTC address will then need to be **imported into the BTC network**.
 
 
 ## Import BTC Address
 
-For querying miner's UTXOs in bitcoin node fastly, miner should import your own BTC address in the Bitcoin node you setup above.
+To quickly query the UTXO’s from the Bitcoin node, a miner should import their own BTC address into the Bitcoin node they have just set up.
 
 ```bash
 bitcoin-cli -conf=/root/bitcoin-config-mainnet.conf importaddress <btcAddress from JSON above>
@@ -44,7 +44,8 @@ bitcoin-cli -conf=/root/bitcoin-config-mainnet.conf importaddress <btcAddress fr
 
 ## Setup Stacks Node
 
-**【Tips】 In this chapter, I will not use the [official tutorial](https://docs.stacks.co/understand-stacks/running-mainnet-node) which using docker, because from my experience Miner will change the config file frequently, launching docker is not a friendly option to me.**
+**【Tips】This section does NOT use the [official Stacks tutorial](https://docs.stacks.co/understand-stacks/running-mainnet-node), which uses Docker. In our experience, Docker is not a friendly option for STX Miners, due to the need to frequently change the config file in the miner.**
+
 
 ```bash
 # download official binary release
