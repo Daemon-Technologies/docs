@@ -4,7 +4,9 @@ sort: 1
 # Setting Up a Stacks Node
 
 ## Create Miner Key
-**【Tips】 In this chapter, I will use the [official tutorial](https://docs.stacks.co/start-mining/mainnet) which using npx to generate stacks and bitcoin key pairs. This key pair is generated in localhost, you should record the mnemonic and key info carefully before close the command terminal.**
+**【Tips】In this section, I use the [official Stacks tutorial](https://docs.stacks.co/start-mining/mainnet), which uses `npx` to generate both Stacks and Bitcoin key pairs. These key pairs are generated in localhost. You must record the mnemonic and key info carefully and securely before closing the terminal.**
+
+
 
 Refer to [official tutorial](https://docs.stacks.co/start-mining/mainnet): Running a miner
 
