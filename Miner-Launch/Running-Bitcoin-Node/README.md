@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# Setup Bitcoin Node
+# Setting Up a Bitcoin Node
 
 **【Tips】 In this tutorial, I will use Ubuntu 18.04 LTS as env of cloud server.**
 
