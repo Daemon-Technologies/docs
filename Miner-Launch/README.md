@@ -2,9 +2,11 @@
 sort: 1
 ---
 
-# Miner Launch
+# How to Launch an STX Miner
 
-## Requirements
+This is our recommendation for how to best set up and launch an STX Miner on a cloud based server. It is based on our experience and it is only one option.
+
+## Recommended Server Configuration
 
 Cloud Server:
 - 4 cores CPU Above
