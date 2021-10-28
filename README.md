@@ -1,4 +1,4 @@
-# Daemon Technology Documentation
+# Daemon Technologies Documentation
 
 ## Introduction
 
